@@ -1,4 +1,28 @@
 {
+  "name": "fakebus",
+  "version": "2.0",
+  "description": "The original website of the transport of the verhnevolzhya",
+  "main": "index.js",
+  "license": "MIT",
+  "contributors":[{
+    "name": "Kj",
+    "url": "https://github.com/zhuckov"
+  }, {
+    "name": "Kirull",
+    "url": "https://github.com/kirill22111333"
+  },
+  {
+    "name": "Pavelavl",
+    "url": "https://github.com/Pavelavl"
+  }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhuckov/volgacringe"
+  },
+  "scripts": {
+    "test": "nodemon index.js"
+  },
   "dependencies": {
     "nodemon": "^2.0.20"
   }

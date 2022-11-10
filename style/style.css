@@ -4,6 +4,8 @@
     padding: 0;
 }
 #wrapper{ 
+    display: flex;
+    flex-direction: column;
     padding: 30px;
 }
 /* размеры,стили блоков  */
@@ -11,17 +13,53 @@
 /* размеры,стили блоков  */
 /* размеры,стили блоков  */
 /* размеры,стили блоков  */
+
+#footer-menu{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+} 
+
+.title-block{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#pay-block-prnt{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#pay-block-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 #pay-blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 200px;
     height: 350px;
 }
 #header-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 80px;
 }
 .header__block__with__shadow{
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
 }
 .header__block{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box ; 
     padding: 10px;
     width: 280px;
@@ -32,6 +70,9 @@
     background-color: rgb(54,172,242); 
 }
 .pay-block{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 150px;
 }
 /* размеры шрифтов и стили */
@@ -95,57 +136,4 @@
     background-color: white;
     border: 1.2px solid blue;
     border-radius: 12px;
-}
-/* flex блоков */
-/* flex блоков */
-/* flex блоков */
-/* flex блоков */
-/* flex блоков */
-.header__block{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#wrapper{ 
-    display: flex;
-    flex-direction: column;
-}
-#header-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-#footer-menu{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;   
-} 
-.pay-block{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.title-block{ 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-#pay-block-prnt{ 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-#pay-block-link{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-#pay-blocks{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
