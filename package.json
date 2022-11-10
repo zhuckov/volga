@@ -24,6 +24,8 @@
     "test": "nodemon index.js"
   },
   "dependencies": {
+  },
+  "devDependencies": {
     "nodemon": "^2.0.20"
   }
 }

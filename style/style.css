@@ -44,7 +44,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 200px;
-    height: 350px;
+    height: 430px;
 }
 #header-menu{
     display: flex;
@@ -62,8 +62,8 @@
     align-items: center;
     box-sizing: border-box ; 
     padding: 10px;
-    width: 280px;
-    height: 300px;
+    width: 275px;
+    height: 288px;
     border-radius: 30px;
 }
 #blue-header__block{
@@ -73,7 +73,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 150px;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 7px -2px rgba(34, 60, 80, 0.57);
+    -moz-box-shadow: 0px 0px 7px -2px rgba(34, 60, 80, 0.57);
+    box-shadow: 0px 0px 7px -2px rgba(34, 60, 80, 0.57);
+    border-radius: 30px;
 }
 /* размеры шрифтов и стили */
 /* размеры шрифтов и стили */
@@ -100,7 +106,7 @@
     font-size:18px;
 }
 #pay-block-button{ 
-    font-size: 18px;
+    font-size: 23px;
     color: blue;
 }
 #pay-block-button:active{ 
@@ -116,14 +122,14 @@
 /* размеры,стили картинок */
 /* размеры,стили картинок */
 .header__block img{ 
+    margin-top: -35px;
     width: 130px;
-    height:120px;
-    margin-bottom: 20px;
+    height: 120px;
+    margin-bottom: 15px;
 }
 .pay-block-info-img{ 
-    width: 35px;
-    height:35px;
-    margin-top: 15px;
+    width: 40px;
+    height:40px;
 }
 /* стили кнопок */
 /* стили кнопок */
@@ -132,8 +138,8 @@
 /* стили кнопок */
 #pay-block-button{
     width: 160px;
-    height: 46px;
+    height: 48px;
     background-color: white;
     border: 1.2px solid blue;
-    border-radius: 12px;
+    border-radius: 15px;
 }
