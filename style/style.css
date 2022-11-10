@@ -1,42 +1,59 @@
+/* не ну это база */
 *{
     margin: 0;
     padding: 0;
 }
+#wrapper{ 
+    padding: 30px;
+}
 /* размеры,стили блоков  */
-
+/* размеры,стили блоков  */
+/* размеры,стили блоков  */
+/* размеры,стили блоков  */
+/* размеры,стили блоков  */
+#pay-blocks{
+    margin-top: 200px;
+    height: 350px;
+}
 #header-menu{
-    margin-top: 150px;
+    margin-top: 80px;
 }
 .header__block__with__shadow{
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.15);
 }
-
 .header__block{ 
     box-sizing: border-box ; 
-    padding: 25px;
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-
+    padding: 10px;
+    width: 280px;
+    height: 300px;
+    border-radius: 30px;
 }
 #blue-header__block{
     background-color: rgb(54,172,242); 
 }
-
+.pay-block{ 
+    height: 150px;
+}
+/* размеры шрифтов и стили */
+/* размеры шрифтов и стили */
+/* размеры шрифтов и стили */
+/* размеры шрифтов и стили */
 /* размеры шрифтов и стили */
 *{ 
  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .header__block p{ 
+    display: inline-block;
+    height: 30px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 28px;
 }
 #wt{ 
   color: white; 
 }
 .title-block h2{
     font-weight: 500;
-    font-size: 32px;
+    font-size: 40px;
 }
 .footer-menu-text{ 
     font-size:18px;
@@ -45,50 +62,52 @@
     font-size: 18px;
     color: blue;
 }
-#pay-block-button:hover{ 
+#pay-block-button:active{ 
     color: white;
     background-color: blue;
 }
+.pay-block-text{ 
+    font-size: 24px;
+}
 /* размеры,стили картинок */
-
+/* размеры,стили картинок */
+/* размеры,стили картинок */
+/* размеры,стили картинок */
+/* размеры,стили картинок */
 .header__block img{ 
-    width: 120px;
-    height:120px;
-    margin-bottom: 10px;
-}
-
-.pay-block-info-img{ 
-    width: 25px;
-    height:25px;
-    margin-top: 10px;
-}
-
-
-
-
-/* стили кнопок */
-
-#pay-block-button{
     width: 130px;
-    height: 35px;
+    height:120px;
+    margin-bottom: 20px;
+}
+.pay-block-info-img{ 
+    width: 35px;
+    height:35px;
+    margin-top: 15px;
+}
+/* стили кнопок */
+/* стили кнопок */
+/* стили кнопок */
+/* стили кнопок */
+/* стили кнопок */
+#pay-block-button{
+    width: 160px;
+    height: 46px;
     background-color: white;
     border: 1.2px solid blue;
     border-radius: 12px;
 }
-
-
-
 /* flex блоков */
-
+/* flex блоков */
+/* flex блоков */
+/* flex блоков */
+/* flex блоков */
 .header__block{ 
     display: flex;
-    flex-direction:column;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-
 #wrapper{ 
-    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -107,6 +126,7 @@
 .pay-block{ 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .title-block{ 
     display: flex;
@@ -123,4 +143,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+#pay-blocks{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
