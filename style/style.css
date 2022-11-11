@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-#wrapper{ 
+.wrapper{ 
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -11,7 +11,7 @@
 
 /* размеры,стили блоков  */
 
-#footer-menu{
+.footer-menu{
     position: absolute;
     bottom: 0;
     display: flex;
@@ -24,26 +24,26 @@
     align-items: center;
     justify-content: space-between;
 }
-#pay-block-prnt{ 
+.pay-block-prnt{ 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
 }
-#pay-block-link{
+.pay-block-link{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-#pay-blocks{
+.pay-blocks{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 200px;
     height: 480px;
 }
-#header-menu{
+.header-menu{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,7 +63,7 @@
     height: 275px;
     border-radius: 30px;
 }
-#blue-header__block{
+.blue-header__block{
     background-color: rgb(54,172,242); 
 }
 .pay-block{ 
@@ -91,7 +91,7 @@
     font-weight: 400;
     font-size: 28px;
 }
-#wt{ 
+.wt{ 
   color: white; 
 }
 .title-block h2{
@@ -101,14 +101,14 @@
 .footer-menu-text{ 
     font-size:18px;
 }
-#pay-block-button:active{ 
+.pay-block-button:active{ 
     color: white;
     background-color: blue;
 }
 .pay-block-text{ 
     font-size: 30px;
 }
-#balance-bold{ 
+.balance-bold{ 
     font-weight:700;
 }
 
@@ -125,7 +125,7 @@
     margin-top: -15px;
 }
 /* стили кнопок */
-#pay-block-button{
+.pay-block-button{
     width: 180px;
     height: 56px;
     background-color: white;
