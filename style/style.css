@@ -10,19 +10,29 @@
 }
 
 /* размеры,стили блоков */
+.pay-icon-spc{
+    margin-top: -50px;
+}
 .footer-menu__item {
+    box-sizing: border-box;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 .footer-menu{
+    -webkit-box-shadow: 0px -2px 0px 0px rgba(34, 60, 80, 0.19);
+    -moz-box-shadow: 0px -2px 0px 0px rgba(34, 60, 80, 0.19);
+    box-shadow: 0px -2px 0px 0px rgba(34, 60, 80, 0.19);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90%;
-    position: absolute;
-    bottom: 0 ;
+    height: 129px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 3px;
 } 
 .title-block{ 
     display: flex;
@@ -81,12 +91,7 @@
     box-shadow: 0px 0px 7px -2px rgb(34 60 80 / 57%);
     border-radius: 30px;
 }
-.footer-menu__item{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items:center;
-}
+
 /* размеры шрифтов и стили */
 *{ 
  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -133,8 +138,8 @@
     height:50px;
 }
 .pay-circle-inner img{ 
-    width: 37px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
 }
 /* стили иконок футера */
 .meg {
@@ -183,24 +188,24 @@
     background: white;
 }
 .pay-circle{
-    background: -webkit-linear-gradient(45deg, rgb(56, 106, 255) 4%, rgb(45, 1, 236) 17%, rgb(138, 43, 226) 78%);
-    background: -moz-linear-gradient(45deg, rgb(56, 106, 255) 4%, rgb(45, 1, 236) 17%, rgb(138, 43, 226) 78%);
-    background: linear-gradient(45deg, rgb(56, 106, 255) 4%, rgb(45, 1, 236) 10%, rgb(138, 43, 226) 78%);
+    background: -webkit-linear-gradient(45deg, rgb(0, 91, 234) 22%, rgb(57, 70, 248) 50%);
+    background: -moz-linear-gradient(45deg, rgb(0, 91, 234) 22%, rgb(57, 70, 248) 50%);
+    background: linear-gradient(45deg, rgb(0, 91, 234) 22%, rgb(57, 70, 248) 50%);
     -webkit-box-shadow: 0px 0px 36px 7px rgb(4 0 249 / 62%);
     -moz-box-shadow: 0px 0px 36px 7px rgba(4, 0, 249, 0.62);
     box-shadow: 0px 0px 36px 7px rgb(4 0 249 / 62%);
-    width: 75px;
-    height: 75px;
+    width: 95px;
+    height: 95px;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;;
 }
 .pay-circle-inner{
     background-color: white;
-    width: 43px;
-    height: 43px;
+    width: 50px;
+    height: 50px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -244,15 +249,15 @@
     height: 60px;
 }
 .head-icon{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background: grey;
 }
 .body-icon{
-    width: 44px;
-    height: 27px;
-    border-radius: 10px 10px 0 0;
+    width: 45px;
+    height: 30px;
+    border-radius: 35px 35px 0 0;
     background: grey;
 }
 /* стили кнопок */
