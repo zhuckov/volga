@@ -2,7 +2,10 @@
 <head>
   <meta charset="utf-8">
   <title>Главная</title>
-  <link rel="stylesheet" type="text/css" href="../style/style.css">
+  <link rel="stylesheet" type="text/css" href="../style/main-styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <html lang="ru">
   <body>
@@ -16,7 +19,7 @@
             <img src="../images/rate-icon.svg" alt="">
             <p>Тарифы</p>
           </div>
-          <div class="header__block header__block__with__shadow">
+          <div id="fullscreen-btn" class="header__block header__block__with__shadow">
             <img src="../images/bus-icon.svg" alt="">
             <p>Билеты<br>по региону</p>
           </div>
@@ -54,7 +57,36 @@
         </div>
       </div>
       <div class="ticket-block">
-        <p class="ticket-block-title">Ваш билет</p>
+        <div class="title-block-da">
+          <p class="ticket-block-title">Ваш билет</p>
+        </div>
+        <div class="ticket">
+          <div>
+            <div class="bus-number-block-da">
+              <div class="bus-number-block-da-image-block"> <img class= "bus-number-block-da-image-block__img" src="../images/bluebus-ticket-number.svg" alt=""></div>
+              <p class="bus-registration-number">211</p>
+            </div>
+            <div class="about-the-trip-block">
+              <p class="date">8 октября, 2022, <span class="time">16:33</span></p>
+              <p class="bus-station">Проспект Калинина</p>
+            </div>
+            <div class="price-block">
+              <p class="trip-price">27 ₽</p>
+            </div>
+          </div>
+          <div class="qrcode-block">
+            <img class="ticket-qrcode" src="../images/ticket-qrcode.svg" alt="">
+          </div>
+          <div class="syeta....">
+            <div class="bus-number-block">
+              <p class="bus-number">С 012 СР <span class="bus-number-region">69</span></p>
+            </div>
+            <div class="dohuya-vajniy-text-block">
+              <p class="dohuya-vajniy-text">ООО "Верхневолжское автотранспортное предприятие"</p>
+            </div>
+          </div>
+
+        </div>
       </div>
       <footer class="footer-menu">
           <div class="footer-menu__item">
@@ -106,5 +138,8 @@
           </div>
       </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script defer src="../scripts/touchSlider.js"></script>
+    <script defer src="../scripts/fullscreen.js"></script>
   </body>
 </html>

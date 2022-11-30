@@ -1,31 +1,23 @@
 {
-  "name": "fakebus",
-  "version": "2.0",
-  "description": "The original website of the transport of the verhnevolzhya",
+  "name": "volgacringe",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
-  "contributors":[{
-    "name": "Kj",
-    "url": "https://github.com/zhuckov"
-  }, {
-    "name": "Kirull",
-    "url": "https://github.com/kirill22111333"
+  "scripts": {
+    "test": "nodemon server.js"
   },
-  {
-    "name": "Pavelavl",
-    "url": "https://github.com/Pavelavl"
-  }
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhuckov/volgacringe"
+    "url": "git+https://github.com/zhuckov/volgacringe.git"
   },
-  "scripts": {
-    "test": "nodemon index.js"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhuckov/volgacringe/issues"
   },
+  "homepage": "https://github.com/zhuckov/volgacringe#readme",
   "dependencies": {
-  },
-  "devDependencies": {
+    "express": "^4.18.2",
     "nodemon": "^2.0.20"
   }
 }
