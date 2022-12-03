@@ -1,6 +1,6 @@
-let fullscreenElement = $("#fullscreen-btn"); 
+let fullscreenElement = document.querySelector("#fullscreen-btn"); 
 let html = document.documentElement;
-$(fullscreenElement).on('click', fullscreen); 
+fullscreenElement.addEventListener('click', fullscreen); 
 function fullscreen(){
     if (!document.fullscreenElement){
         html.requestFullscreen();

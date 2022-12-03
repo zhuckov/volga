@@ -77,6 +77,7 @@
 .pay-icon-spc{
     margin-top: -30px;
 }
+/*
 .footer-menu__item {
     width: 50px;
     height: 45px;
@@ -104,6 +105,7 @@
     left: 0px;
     background: white;
 } 
+*/
 .title-block{ 
     display: flex;
     align-items: center;
@@ -223,12 +225,12 @@ p.trip-price {
 .title-block h2{
     font-weight: 500;
     font-size: 17px;
-}
+} /*
 .footer-menu-text{ 
     display: inline-block;
     margin-top: 7px;
     font-size: 12px;
-}
+} */
 .pay-block-button:active{ 
     color: white;
     background-color: blue;
@@ -250,7 +252,7 @@ img.bus-number-block-da-image-block__img {
     margin-left: 25px;
 }
 img.ticket-qrcode {
-    height: 30vh;
+    height: 30vh;   
     width: 64vw;
 }
 .header__block img{ 
@@ -262,11 +264,13 @@ img.ticket-qrcode {
     width: 24px;
     height: 24px;
 }
+/*
 .pay-circle-inner img{ 
     width: 22px;
     height: 22px;
-}
+} */ 
 /* стили иконок футера */
+/*
 .meg {
     position: relative;
     width: 0;
@@ -381,7 +385,7 @@ img.ticket-qrcode {
     height: 10px;
     border-radius: 30px 30px 0 0;
     background: #8d90a1;
-}
+}  */
 /* стили кнопок */
 .pay-block-button{
     width: 85px;
