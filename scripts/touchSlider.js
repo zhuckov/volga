@@ -1,5 +1,3 @@
-
-
 let parent = document.querySelector('.wrapper'); 
 let child =  document.querySelector('.ticket-block'); 
 let footer = document.querySelector('.footer-menu'); 

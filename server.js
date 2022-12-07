@@ -13,7 +13,7 @@ app.get('/setting', (req , res) =>{
     res.render('pages/main.ejs' , {
         'page': 'ticket-setting', 
         'title': 'Настройки'
-    });
+    }) 
 });
 app.get('/profile', (req , res) =>{
     res.render('pages/main.ejs' , {

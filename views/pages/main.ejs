@@ -10,8 +10,10 @@
     <title><%- title %></title>
 </head>
 <body>
-
-    <%- include('../partials/'+page) %>
+    <div id="page-block">
+        <%- include('../partials/'+page) %>
+    </div>
     <%- include('../partials/footer') %>
+    <script src="../scripts/profile-move.js"></script>
 </body>
 </html>

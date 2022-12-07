@@ -74,9 +74,7 @@
     background: white;
     transform: translate(0 , 100%);
 }
-.pay-icon-spc{
-    margin-top: -30px;
-}
+
 .title-block{ 
     display: flex;
     align-items: center;
