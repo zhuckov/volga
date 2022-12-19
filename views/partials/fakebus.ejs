@@ -32,7 +32,7 @@
           <div class="pay-block-prnt">
             <div class="pay-block__item">
               <p>Кошелек</p>
-              <p class="balance"> <span class="balance-bold">250</span> ₽</p>
+              <p class="balance"> <span class="balance-bold"><%- balance %></span> ₽</p>
             </div>
             <div class="pay-block__item">
               <p>Абонимент</p>
@@ -51,15 +51,14 @@
         <div class="ticket">
           <div>
             <div class="bus-number-block-da">
-              <div class="bus-number-block-da-image-block"> <img class= "bus-number-block-da-image-block__img" src="../images/bluebus-ticket-number.svg" alt=""></div>
-              <p class="bus-registration-number">211</p>
+              <p class="bus-registration-number"><%- tripNum %></p>
             </div>
             <div class="about-the-trip-block">
-              <p class="date">8 октября, 2022, <span class="time">16:33</span></p>
-              <p class="bus-station">Проспект Калинина</p>
+              <p class="date"><%- date %><span class="time"> <%- time %></span></p>
+              <p class="bus-station"><%- firstStation %> <%- secondStation %></p>
             </div>
             <div class="price-block">
-              <p class="trip-price">27 ₽</p>
+              <p class="trip-price"><%- price %> ₽</p>
             </div>
           </div>
           <div class="qrcode-block">
@@ -67,7 +66,7 @@
           </div>
           <div class="syeta....">
             <div class="bus-number-block">
-              <p class="bus-number">С 012 СР <span class="bus-number-region">69</span></p>
+              <p class="bus-number"><%- busRegistratioNumber %> <span class="bus-number-region">69</span></p>
             </div>
             <div class="dohuya-vajniy-text-block">
               <p class="dohuya-vajniy-text">ООО "Верхневолжское автотранспортное предприятие"</p>
@@ -77,5 +76,5 @@
         </div>
       </div>
     </div>
-    <script defer src="../scripts/touchSlider.js"></script>
-    <script defer src="../scripts/fullscreen.js"></script>
+    <script  src="../scripts/touchSlider.js"></script>
+    <script  src="../scripts/fullscreen.js"></script>

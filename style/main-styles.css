@@ -12,6 +12,7 @@
     overflow:scroll;
 }
 
+
 /* размеры,стили блоков */
 .qrcode-block {
     width: fit-content;
@@ -29,9 +30,8 @@
     margin-bottom: 20px;
 }
 .title-block-da{
-    margin-bottom: 20px;
     width: max-content;
-    padding: 0 0px 0px 10px;
+    padding: 0px 0px 0px 5px;
 }
 .ticket{ 
     -webkit-box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 30%);
@@ -43,23 +43,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 95%;
+    width: 98%;
     height: 90%;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 .bus-number-block-da {
     display: flex;
     align-items: center;
-    min-height: 47px;
-    width: 140px;
-    margin-left: -25px;
-    margin-bottom: 20px;
+    width: 110px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
 }
 .ticket-block {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     -webkit-box-shadow: 0px -3px 0px 0px rgb(0 0 0 / 20%);
     -moz-box-shadow: 0px -3px 0px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 44px 2px rgb(0 0 0 / 8%);
@@ -72,7 +72,7 @@
     padding: 15px;
     box-sizing: border-box;
     background: white;
-    transform: translate(0 , 100%);
+    transform: translate(0 , 99.5%);
 }
 
 .title-block{ 
@@ -92,11 +92,12 @@
     align-items: flex-end;
 }
 .pay-blocks{
+    bottom: 12%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 85%;
-
+    position: absolute;
+    width: 95%;
 }
 .header-menu{
     display: flex;
@@ -135,15 +136,17 @@
     border-radius: 10px;
 }
 .price-block {
+    display: block;
     border: 2px solid black;
     height: max-content;
     width: max-content;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
-    align-items: center;
-    justify-content: center;
+    margin-top: 20px;
 }
-
+.bus-number-block-da{ 
+    background: url('../images/vectorpaint.svg') no-repeat;
+}
 /* размеры шрифтов и стили */
 *{ 
  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -162,14 +165,8 @@ p.bus-number {
 p.bus-registration-number {
     color: white;
     display: inline-block;
-    margin-left: -65px;
-    margin-bottom: 3px;
     font-weight: 400;
-    font-size: 20px;
-}
-.about-the-trip-block {
-    margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 22px;
 }
 span.time {
     font-weight: 700;
@@ -197,7 +194,7 @@ p.trip-price {
 } 
 .pay-block-button:active{ 
     color: white;
-    background-color: blue;
+    background-color: #475fd0;
 }
 .pay-block-text{ 
     font-size:  14px;
@@ -209,15 +206,14 @@ p.ticket-block-title {
     font-size: 16px;
     font-weight: 600;
 }
-/* размеры,стили картинок */
-img.bus-number-block-da-image-block__img {
-    width: 100px;
-    height: 38px;
-    margin-left: 25px;
+p.date {
+    margin-bottom: 5px;
 }
+/* размеры,стили картинок */
+
 img.ticket-qrcode {
-    height: 30vh;   
-    width: 64vw;
+    height: 33vh;
+    width: 70vw;
 }
 .header__block img{ 
     width: 50px;
@@ -234,10 +230,10 @@ img.ticket-qrcode {
     width: 85px;
     height: 27px;
     background-color: white;
-    border: 1.2px solid blue;
+    border: 1.2px solid #475fd0;
     border-radius: 6px;
     font-size: 14px;
-    color: blue;
+    color: #475fd0;
 }
 
 @keyframes click-start{

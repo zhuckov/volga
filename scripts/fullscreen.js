@@ -1,7 +1,7 @@
 let fullscreenElement = document.querySelector("#fullscreen-btn"); 
-let html = document.documentElement;
 fullscreenElement.addEventListener('click', fullscreen); 
 function fullscreen(){
+    let html = document.documentElement;
     if (!document.fullscreenElement){
         html.requestFullscreen();
     }

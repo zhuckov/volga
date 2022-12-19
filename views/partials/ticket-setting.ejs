@@ -1,57 +1,290 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/ticket-setting-style.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <title>Настройки</title>
-</head>
-<body>
-    <div class="wrap">
-        <section>
-            <div class="back-to-main"><img src="" alt=""></div>
-            <div class="setting-title"><h3>Профиль</h3></div>
-            <div class="setting-balance-block">
-                <p class="setting-text">Баланс</p> <div class="input-block">
-                <input type="text" class="setting-balance setting-input" value="250">
-            </div></div>
-        </section>
-        <section>
-            <div class="setting-title"><h3>Билет</h3></div>
-            <div class="setting-price-block">
-                <p class="setting-text">Цена</p> <div class="input-block">
-                <input type="text" class="setting-price setting-input" value="27">
-            </div></div>
-            <div class="setting-date-block">
-                <div class="setting-separator">
-                    <p class="setting-text">Дата</p>
-                    <p class="setting-btn date-setter">текущая</p>
-                </div> <div class="input-block">
-                <input type="text" class="setting-date setting-input" value="31 ноября 2022, 20:42">
-            </div></div>
-            <div class="setting-way-block">
-                <p class="setting-text">Путь</p> <div class="input-block">
-                <input type="text" class="setting-way setting-input" value="Энергоремонт - Мигалово">
-            </div></div>
-            <div class="setting-trip-block">
-                <p class="setting-text">Номер маршрута</p> <div class="input-block">
-                <input type="text" class="setting-trip-number setting-input" value="20">
-            </div></div>
-            <div class="setting-bus-block">
-                <div class="setting-separator">
-                    <p class="setting-text">Номер автобуса</p>
-                    <p class="setting-btn bus-number-generate">Сгенерировать</p>
-                </div> 
-                <div class="input-block">
-                <input type="text" class="setting-reg-num setting-input" value="О 033 НЛ">
-            </div>
-        </div>
-        </section>
-
+<div class="wrap">
+  <section>
+    <div class="back-to-main" onclick="javascript:location.href='/profile';">
+      <img class="left-arrow__img" src="../images/arrow.svg" alt="" />
     </div>
-    <script src="../scripts/setDate.js"></script>
-    <script src="../scripts/busNumGenerate.js"></script>
-</body>
-</html>
+    <div class="setting-title"><h3>Профиль</h3></div>
+    <div class="setting-balance-block">
+      <p class="setting-text">Баланс</p>
+      <div class="input-block">
+        <input type="text" class="setting-balance setting-input" value='<%- balance %>'' />
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="setting-title"><h3>Билет</h3></div>
+    <div class="setting-price-block">
+      <p class="setting-text">Цена</p>
+      <div class="input-block">
+        <input type="text" class="setting-price setting-input" value='<%- price %>' />
+      </div>
+    </div>
+    <div class="setting-date-block">
+      <div class="setting-separator">
+        <p class="setting-text">Дата</p>
+        <p class="setting-btn date-setter">Текущая</p>
+      </div>
+      <div class="input-block">
+        <input
+          type="text"
+          class="setting-date setting-input"
+          value='<%- datetime %>' />
+      </div>
+    </div>
+  
+    <div class="setting-way-block">
+      <h3 class="setting-title">Путь</h3>
+      <div class="setting-trip-block">
+        <p class="setting-text">Номер маршрута</p>
+        <select name="bus-select" class="select-stuka tripNum">
+          <option>-- Выберите номер маршрута --</option>
+          <option> 1 </option>
+          <option> 2 </option>
+          <option> 3 </option>
+          <option> 6 </option>
+          <option> 7 </option>
+          <option> 9 </option>
+          <option> 10 </option>
+          <option> 12 </option>
+          <option> 14 </option>
+          <option> 15 </option>
+          <option> 19 </option>
+          <option> 20 </option>
+          <option> 21 </option>
+          <option> 24 </option>
+          <option> 27 </option>
+          <option> 30 </option>
+          <option> 31 </option>
+          <option> 33 </option>
+          <option> 35 </option>
+          <option> 36 </option>
+          <option> 41 </option>
+          <option> 42 </option>
+          <option> 43 </option>
+          <option> 44 </option>
+          <option> 45 </option>
+          <option> 51 </option>
+          <option> 55 </option>
+          <option> 56 </option>
+          <option> 102 </option>
+          <option> 103 </option>
+          <option> 104 </option>
+          <option> 105 </option>
+          <option> 106 </option>
+          <option> 107 </option>
+          <option> 108 </option>
+          <option> 109 </option>
+          <option> 110 </option>
+          <option> 111 </option>
+          <option> 112 </option>
+          <option> 113 </option>
+          <option> 114 </option>
+          <option> 115 </option>
+          <option> 116 </option>
+          <option> 117 </option>
+          <option> 118 </option>
+          <option> 119 </option>
+          <option> 120 </option>
+          <option> 121 </option>
+          <option> 122 </option>
+          <option> 123 </option>
+          <option> 125 </option>
+          <option> 126 </option>
+          <option> 127 </option>
+          <option> 128 </option>
+          <option> 129 </option>
+          <option> 130 </option>
+          <option> 131 </option>
+          <option> 132 </option>
+          <option> 133 </option>
+          <option> 135 </option>
+          <option> 136 </option>
+          <option> 137 </option>
+          <option> 138 </option>
+          <option> 139 </option>
+          <option> 141 </option>
+          <option> 143 </option>
+          <option> 150 </option>
+          <option> 152 </option>
+          <option> 153 </option>
+          <option> 154 </option>
+          <option> 177 </option>
+          <option> 202 </option>
+          <option> 204 </option>
+          <option> 205 </option>
+          <option> 207 </option>
+          <option> 208 </option>
+          <option> 211 </option>
+          <option> 222 </option>
+          <option> 223 </option>
+          <option> 225 </option>
+          <option> 227 </option>
+          <option> 228 </option>
+          <option> 233 </option>
+          <option> 363 </option>
+          <option> 116с </option>
+          <option> 101с </option>
+          <option> 211с </option>
+          <option> 104с </option>
+          <option> 108с </option>
+          <option> 210c </option>
+          <option> 206с </option>
+          <option> 100с </option>
+          <option> 107с </option>
+          <option> 120с </option>
+          <option> 118с </option>
+          <option> 109с </option>
+          <option> 112с </option>
+          <option> 204с </option>
+          <option> 203с </option>
+          <option> 119с </option>
+          <option> 102с </option>
+          <option> 114с </option>
+          <option> 113с </option>
+          <option> 103с </option>
+          <option> 111с </option>
+          <option> 110с </option>
+          <option> 208с </option>
+          <option> 209с </option>
+          <option> 7р </option>
+          <option> 335р </option>
+          <option> 10бр </option>
+          <option> 24р </option>
+          <option> 349р </option>
+          <option> 4ар </option>
+          <option> 348р </option>
+          <option> 351р </option>
+          <option> 4р </option>
+          <option> 333р </option>
+          <option> 340р </option>
+          <option> 339ар </option>
+          <option> 332р </option>
+          <option> 337р </option>
+          <option> 2ар </option>
+          <option> 3р </option>
+          <option> 336ар </option>
+          <option> 336р </option>
+          <option> 2бр </option>
+          <option> 11р </option>
+          <option> 350р </option>
+          <option> 15р </option>
+          <option> 1р </option>
+          <option> 455р </option>
+          <option> 339р </option>
+          <option> 13р </option>
+          <option> 2р </option>
+          <option> 10р </option>
+          <option> 341р </option>
+          <option> 341ар </option>
+          <option> 9р </option>
+          <option> 345р </option>
+          <option> 338р </option>
+          <option> 334р </option>
+          <option> 342р </option>
+          <option> 107з </option>
+          <option> 109з </option>
+          <option> 105з </option>
+          <option> 112з </option>
+          <option> 108з </option>
+          <option> 103з </option>
+          <option> 104з </option>
+          <option> 101з </option>
+          <option> 102з </option>
+          <option> 357з </option>
+          <option> 1з </option>
+          <option> 125р </option>
+          <option> 177. </option>
+          <option> 6кн </option>
+          <option> 60кн </option>
+          <option> 66кн </option>
+          <option> 103кн </option>
+          <option> 141кн </option>
+          <option> 141-2кн </option>
+          <option> 141-1кн </option>
+          <option> 141-3кн </option>
+          <option> 116кн </option>
+          <option> 1кн </option>
+          <option> 12кн </option>
+          <option> 304кн </option>
+          <option> 203кн </option>
+          <option> 11кн </option>
+          <option> 102кн </option>
+          <option> 2кнз </option>
+          <option> 103-2кн </option>
+          <option> 107кн </option>
+          <option> 115кн </option>
+          <option> 204кн </option>
+          <option> 1кнз </option>
+          <option> 106кн </option>
+          <option> 103-1кн </option>
+          <option> 121-4кн </option>
+          <option> 121-2кн </option>
+          <option> 121-3кн </option>
+          <option> 305кн </option>
+          <option> 121-1кн </option>
+          <option> 109кн </option>
+          <option> 303кн </option>
+          <option> 104кн </option>
+          <option> 105кн </option>
+          <option> 111кн </option>
+          <option> 152ао </option>
+          <option> 457о </option>
+          <option> 1к </option>
+          <option> 3к </option>
+          <option> 284ак </option>
+          <option> 20к </option>
+          <option> 281к </option>
+          <option> 17к </option>
+          <option> 4к </option>
+          <option> 12к </option>
+          <option> 14к </option>
+          <option> 10к </option>
+          <option> 16к </option>
+          <option> 282к </option>
+          <option> 2к </option>
+          <option> 286к </option>
+          <option> 288к </option>
+          <option> 278к </option>
+          <option> 289к </option>
+          <option> 284к </option>
+          <option> 279к </option>
+          <option> 283к </option>
+          <option> 280к </option>
+          <option> 285к </option>
+          <option> 287к </option>
+          <option> 6к </option>
+          <option> 1 (Пено)</option>
+          <option> 2 (Пено) </option>
+        </select>
+      </div>
+      <p class="setting-text">Текущая остановка</p>
+      <div class="input-block">
+      <select name="first" class="select-stuka firstStationSelect">
+        <option>-- Выберите остановку --</option>
+      </select>
+      </div>
+      <p class="setting-text">Конечная остановка</p>
+      <div class="input-block">
+        <select name="second" class="select-stuka secondStationSelect">
+          <option>-- Выберите остановку --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="setting-bus-block">
+      <div class="setting-separator">
+        <p class="setting-text">Номер автобуса</p>
+        <p class="setting-btn bus-number-generate">Сгенерировать</p>
+      </div>
+      <div class="input-block">
+        <input type="text" class="setting-reg-num setting-input" value ='<%- busRegistratioNumber %>'/>
+      </div>
+    </div>
+    <div class="setting-save-params-btn-block">
+      <button class="setting-save-params-btn">сохранить</button>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript" src="../routes.json"></script>
+<script src="../scripts/ticket-setting.js"></script>
