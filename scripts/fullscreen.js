@@ -1,4 +1,5 @@
-let fullscreenElement = document.querySelector("#fullscreen-btn"); 
+
+    let fullscreenElement = document.querySelector("#fullscreen-btn"); 
 fullscreenElement.addEventListener('click', fullscreen); 
 function fullscreen(){
     let html = document.documentElement;

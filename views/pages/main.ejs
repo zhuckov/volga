@@ -17,7 +17,28 @@
     <div id="page-block">
         <%- include('../partials/'+page)%>
     </div data="content">
-    <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>
+<script>
+        $('.btn-profile').on('click' , ()=>{ 
+            router('/profile')
+        })
+        $('.btn-service').on('click' , ()=>{ 
+            router('/')
+        })
+
+        function router(routeUrl){ 
+            $.ajax({
+            url : routeUrl , 
+            method : 'GET',
+            success :(data) =>{
+                let head = document.querySelector('head').querySelector('title').innerHTML = data.split('<title>')[1].split('</title>')[0]
+                $('#page-block').html(data.split('<div id="page-block">')[1].split('</div data="content">')[0])
+            }
+        })
+        }
+</script>
+
+
 
 </body>
 </html>

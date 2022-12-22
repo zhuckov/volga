@@ -5452,7 +5452,6 @@ $(bigJson).ready(() => {
   $(".secondStationSelect").select2();
 });
 $(".tripNum").on("select2:select", () => {
-  console.log($(".tripNum").val())
   if ($(".tripNum").val() == "-- Выберите остановку --" ){
     return
   }
@@ -5488,7 +5487,6 @@ function parseData(){
   if ('date' in ticketSettings == false ){ 
     superDateSetter()
   }
-  console.log('date' in ticketSettings == false)
   if ($(".setting-reg-num").val() == "" || 'busRegistratioNumber' in ticketSettings == false){ 
     ticketSettings.busRegistratioNumber = superBusNumberGenerator() ;
   }else{ 
@@ -5576,12 +5574,15 @@ function superDateSetter(){
 
 async function EditUserSettings(obj) {
   console.log(obj)
-  const response = await fetch("/setting", {
-    method:'PUT',
-    headers: { "Accept": "application/json", "Content-Type": "application/json" }, 
-    body : obj
-    })
-  
+
+
+  $.ajax({
+    url : '/setting' ,
+    method : 'PUT' ,
+    context : document.body , 
+    data : obj, 
+    headers : { "Accept": "application/json", "Content-Type": "application/json" }
+  })
 }
 
 function getStations(tripNum) {
