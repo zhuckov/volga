@@ -14,6 +14,40 @@ const mongoClient = new MongoClient(url);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname));
 
+app.get("/info", function (req, res) {
+  if (req.headers.cookie === undefined) {
+    res.redirect("/");
+  } else {
+    res.render("pages/main.ejs", {
+      title: "Информация",
+      page: "info",
+      style: `
+    <style>
+    #page-block{ 
+      padding:10px
+    }
+    .meg {
+      border-right: 17px solid #475fd0;
+
+      }
+        .meg-parr {
+
+          background-color: #475fd0;
+
+      }
+            .meg-rect {
+
+              background-color: #475fd0;
+            }
+.tutorial-text{ 
+  color: #475fd0; 
+}
+    </style>
+  `,
+    });
+  }
+});
+
 app.get("/", jsonParser, async (req, res) => {
   const collection = req.app.locals.collection;
   let userID = new objectId(req.params.id).toString();
@@ -39,6 +73,22 @@ app.get("/", jsonParser, async (req, res) => {
       res.render("pages/main.ejs", {
         page: "fakebus",
         title: "Главная",
+        style: `
+        <style>
+            .square-service {
+              background: #475fd0;
+              
+          }
+          .square-service-white {
+
+            border: 1px solid #475fd0;
+
+        }
+        .service-text{ 
+          color: #475fd0;
+        }
+        </style>
+      `,
         balance: userSetting.balance,
         price: userSetting.price,
         tripNum: userSetting.tripNum,
@@ -57,6 +107,22 @@ app.get("/", jsonParser, async (req, res) => {
     try {
       let user = await collection.findOne({ _id: id });
       res.render("pages/main.ejs", {
+        style: `
+        <style>
+            .square-service {
+              background: #475fd0;
+              
+          }
+          .square-service-white {
+
+            border: 1px solid #475fd0;
+
+        }
+        .service-text{ 
+          color: #475fd0;
+        }
+        </style>
+      `,
         page: "fakebus",
         title: "Главная",
         balance: user.balance,
@@ -140,6 +206,20 @@ app.get("/setting", async (req, res) => {
         res.render("pages/main.ejs", {
           page: "ticket-setting",
           title: "Настройки",
+          style: `
+        <style>
+          .profile-text{
+            color: #475fd0;
+          }
+          .head-icon{
+            background: #475fd0;
+          }  
+          .body-icon{ 
+            background: #475fd0;
+          }
+        </style>
+      `,
+
           balance: user.balance,
           price: user.price,
           tripNum: user.tripNum,
@@ -165,6 +245,20 @@ app.get("/setting", async (req, res) => {
             datetime: datetime,
             choiceStationFirst: "",
             choiceStationSecond: "",
+
+            style: `
+        <style>
+          .profile-text{
+            color: #475fd0;
+          }
+          .head-icon{
+            background: #475fd0;
+          }  
+          .body-icon{ 
+            background: #475fd0;
+          }
+        </style>
+      `,
           });
         } catch (err) {
           res.sendStatus(500);
@@ -183,12 +277,28 @@ app.get("/profile", (req, res) => {
     res.render("pages/main.ejs", {
       page: "profile",
       title: "Профиль",
+
+      style: `
+    <style>
+      .profile-text{
+        color: #475fd0;
+      }
+      .head-icon{
+        background: #475fd0;
+      }  
+      .body-icon{ 
+        background: #475fd0;
+      }
+    </style>
+  `,
     });
   }
 });
+
 app.get("*", function (req, res) {
   res.redirect("/");
 });
+
 process.on("SIGINT", async () => {
   await mongoClient.close();
   console.log("Приложение завершило работу");

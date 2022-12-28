@@ -1,6 +1,6 @@
 <div class="wrap">
   <section>
-    <div class="back-to-main" onclick="javascript:location.href='/profile';">
+    <div class="back-to-main">
       <img class="left-arrow__img" src="../images/arrow.svg" alt="" />
     </div>
     <div class="setting-title"><h3>Профиль</h3></div>
@@ -5739,6 +5739,7 @@ $(bigJson).ready(() => {
   $(".tripNum").select2();
   $(".firstStationSelect").select2();
   $(".secondStationSelect").select2();
+
 });
 $(".tripNum").on("select2:select", () => {
   if ($(".tripNum").val() == "-- Выберите остановку --" ){
@@ -5879,4 +5880,13 @@ function getStations(tripNum) {
 }
 
   })
+
+</script>
+
+  <script>
+    $(document).ready(()=>{
+        $('.back-to-main').on('click' , ()=>{ 
+            router('/profile')
+        })
+    })
 </script>

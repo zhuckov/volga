@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +13,19 @@
     <title><%- title %></title>
     <script src="https://code.jquery.com/jquery-3.6.2.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+    <%- style %>
 </head>
 <body>
+
     <div id="page-block">
         <%- include('../partials/'+page)%>
     </div data="content">
         <%- include('../partials/footer') %>
 <script>
+        $('.btn-tutorial').on('click' , ()=>{ 
+
+            router('/info')
+        })
         $('.btn-profile').on('click' , ()=>{ 
             router('/profile')
         })
@@ -31,11 +38,13 @@
             url : routeUrl , 
             method : 'GET',
             success :(data) =>{
-                let head = document.querySelector('head').querySelector('title').innerHTML = data.split('<title>')[1].split('</title>')[0]
+                document.querySelector('head').querySelector('style').innerHTML = data.split('<style>')[1].split('</style>')[0]
+                document.querySelector('head').querySelector('title').innerHTML = data.split('<title>')[1].split('</title>')[0]
                 $('#page-block').html(data.split('<div id="page-block">')[1].split('</div data="content">')[0])
             }
         })
         }
+
 </script>
 
 
