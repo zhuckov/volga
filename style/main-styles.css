@@ -1,12 +1,13 @@
 /* не ну это база */
+
 *{
+
     outline: none;
     margin: 0;
     padding: 0;
 }
 
 .wrapper{ 
-
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -103,16 +104,12 @@
     width: 95%;
 }
 .header-menu{
-    /*
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 40px;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 40px;
     width: 105%;
+    
 }
 .header__block__with__shadow{
     -webkit-box-shadow: 0px 0px 13px 1px rgb(34 60 80 / 12%);
@@ -246,26 +243,3 @@ img.ticket-qrcode {
     color: #475fd0;
 }
 
-@keyframes click-start{
-    from{
-         transform: translate(0 , 1896px);
-    }
-    to { 
-        transform: translate(0 , 0);
-    }
-}
-@keyframes click-end{
-    from{
-         transform: translate(0 , 0);
-    }
-    to { 
-        transform: translate(0 , 1896px);
-    }
-}
-
-.on-click-animate-start{
-    animation: click-start 275ms linear forwards;
-}
-.on-click-animate-end{
-    animation: click-end 275ms linear forwards;
-}

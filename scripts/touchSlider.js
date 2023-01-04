@@ -76,7 +76,7 @@ child.addEventListener('touchend', (e)=>{
     
         }
         to{
-            transform: translate(0 , ${Math.round(e.view.innerHeight -  50 )}px); 
+          transform: translate(0 , 99.5%);
         }
       }
       .end-animate-ticket{  
@@ -86,7 +86,7 @@ child.addEventListener('touchend', (e)=>{
 
       setTimeout(()=>{
         child.classList.remove('end-animate-ticket')
-        child.style.transform = `translate(0 , ${Math.round(e.view.innerHeight -  50 )}px)` 
+        child.style.transform = `transform: translate(0 , 99.5%);` 
       }, 400)
       child.classList.add('end-animate-ticket') 
     } 
@@ -101,7 +101,6 @@ child.addEventListener('touchend', (e)=>{
 })
   
 function animateticket(e){
-
     if (Math.round( (e.changedTouches[0].pageY) >= 50) && (e.view.innerHeight - Math.round( e.changedTouches[0].pageY)  >= 50) ){ 
       child.style.transform = `translate(0 , ${Math.round( e.changedTouches[0].pageY)}px)`  
     }

@@ -1,151 +1,184 @@
 <div class="wrapper">
-      <header class="header-menu">
-          <div class="header__block blue-header__block">
-            <img src="../images/telegram-icon.svg" alt="">
-            <p class="wt">Новости<br>региона</p>
-          </div>
-          <div class="header__block header__block__with__shadow">
-            <img src="../images/rate-icon.svg" alt="">
-            <p>Тарифы</p>
-          </div>
-          <div id="fullscreen-btn" class="header__block header__block__with__shadow">
-            <img src="../images/bus-icon.svg" alt="">
-            <p>Билеты<br>по региону</p>
-          </div>
-      </header>
-      <div class="pay-blocks">
-        <div class="pay-block">
-        <div class="title-block"> 
-          <h2>Транспортные карты</h2>
-          <img class="pay-block-info-img" src="../images/inf.png" alt="">
-        </div>
-        <div class="pay-block-link">
-          <p class="pay-block-text">привязать банковскую<br>или транспортную карту </p>
-          <button class="pay-block-button">Привязать</button>
-        </div>
-        </div>
-        <div class="pay-block">
-          <div class="title-block"> 
-            <h2>Мобильное приложение</h2>
-            <img class="pay-block-info-img" src="../images/inf.png" alt="">
-          </div>
-          <div class="pay-block-prnt">
-            <div class="pay-block__item">
-              <p>Кошелек</p>
-              <p class="balance"> <span class="balance-bold"><%- balance %></span> ₽</p>
-            </div>
-            <div class="pay-block__item">
-              <p>Абонимент</p>
-              <p>Купить</p>
-            </div>
-            <div class="pay-block__item">
-              <button class="pay-block-button">Пополнить</button>
-            </div>
-          </div>
-        </div>
+  <header class="header-menu">
+    <div class="header__block blue-header__block">
+      <img src="../images/telegram-icon.svg" alt="" />
+      <p class="wt">Новости<br />региона</p>
+    </div>
+    <div class="header__block header__block__with__shadow">
+      <img src="../images/rate-icon.svg" alt="" />
+      <p>Тарифы</p>
+    </div>
+    <div id="fullscreen-btn" class="header__block header__block__with__shadow">
+      <img src="../images/bus-icon.svg" alt="" />
+      <p>Билеты<br />по региону</p>
+    </div>
+  </header>
+  <div class="pay-blocks">
+    <div class="pay-block">
+      <div class="title-block">
+        <h2>Транспортные карты</h2>
+        <img class="pay-block-info-img" src="../images/inf.png" alt="" />
       </div>
-      <div class="ticket-block">
-        <div class="title-block-da">
-          <p class="ticket-block-title">Ваш билет</p>
+      <div class="pay-block-link">
+        <p class="pay-block-text">
+          привязать банковскую<br />или транспортную карту
+        </p>
+        <button class="pay-block-button">Привязать</button>
+      </div>
+    </div>
+    <div class="pay-block">
+      <div class="title-block">
+        <h2>Мобильное приложение</h2>
+        <img class="pay-block-info-img" src="../images/inf.png" alt="" />
+      </div>
+      <div class="pay-block-prnt">
+        <div class="pay-block__item">
+          <p>Кошелек</p>
+          <p class="balance">
+            <span class="balance-bold"><%- balance %></span> ₽
+          </p>
         </div>
-        <div class="ticket">
-          <div>
-            <div class="bus-number-block-da">
-              <p class="bus-registration-number"><%- tripNum %></p>
-            </div>
-            <div class="about-the-trip-block">
-              <p class="date"><%- date %><span class="time"> <%- time %></span></p>
-              <p class="bus-station"><%- firstStation %> <%- secondStation %></p>
-            </div>
-            <div class="price-block">
-              <p class="trip-price"><%- price %> ₽</p>
-            </div>
-          </div>
-          <div class="qrcode-block">
-            <img class="ticket-qrcode" src="../images/ticket-qrcode.svg" alt="">
-          </div>
-          <div class="syeta....">
-            <div class="bus-number-block">
-              <p class="bus-number"><%- busRegistratioNumber %> <span class="bus-number-region">69</span></p>
-            </div>
-            <div class="dohuya-vajniy-text-block">
-              <p class="dohuya-vajniy-text">ООО "Верхневолжское автотранспортное предприятие"</p>
-            </div>
-          </div>
-
+        <div class="pay-block__item">
+          <p>Абонимент</p>
+          <p>Купить</p>
+        </div>
+        <div class="pay-block__item">
+          <button class="pay-block-button">Пополнить</button>
         </div>
       </div>
     </div>
+  </div>
+  <div class="ticket-block">
+    <div class="title-block-da">
+      <p class="ticket-block-title">Ваш билет</p>
+    </div>
+    <div class="ticket">
+      <div>
+        <div class="bus-number-block-da">
+          <p class="bus-registration-number"><%- tripNum %></p>
+        </div>
+        <div class="about-the-trip-block">
+          <p class="date"><%- date %><span class="time"> <%- time %></span></p>
+          <p class="bus-station"><%- firstStation %> <%- secondStation %></p>
+        </div>
+        <div class="price-block">
+          <p class="trip-price"><%- price %> ₽</p>
+        </div>
+      </div>
+      <div class="qrcode-block">
+        <img class="ticket-qrcode" src="../images/ticket-qrcode.svg" alt="" />
+      </div>
+      <div class="syeta....">
+        <div class="bus-number-block">
+          <p class="bus-number">
+            <%- busRegistratioNumber %>
+            <span class="bus-number-region">69</span>
+          </p>
+        </div>
+        <div class="dohuya-vajniy-text-block">
+          <p class="dohuya-vajniy-text">
+            ООО "Верхневолжское автотранспортное предприятие"
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
-  $(document).ready(()=>{
-    let fullscreenElement = document.querySelector("#fullscreen-btn"); 
-fullscreenElement.addEventListener('click', fullscreen); 
-function fullscreen(){
-    let html = document.documentElement;
-    if (!document.fullscreenElement){
+  $(document).ready(() => {
+    let fullscreenElement = document.querySelector("#fullscreen-btn");
+    fullscreenElement.addEventListener("click", fullscreen);
+    function fullscreen() {
+      let html = document.documentElement;
+      if (!document.fullscreenElement) {
         html.requestFullscreen();
-    }
-    else{
+      } else {
         document.exitFullscreen();
+      }
     }
-}
-
-
-})
+  });
 </script>
+
 <script>
-      $(document).ready(()=>{
-        let parent = document.querySelector('.wrapper'); 
-let child =  document.querySelector('.ticket-block'); 
-let footer = document.querySelector('.footer-menu'); 
-let flag; 
+/*
+  $(document).ready(()=>{
+    let screenHeight = window.screen.height; 
+    let footerHeight = document.querySelector('.footer-menu').offsetHeight;
+    let parent = document.querySelector(".wrapper");
+    let child = document.querySelector(".ticket-block");
+    let flag; 
+    console.log(window)
+    child.addEventListener('touchstart', ()=>{
+      child.addEventListener('touchmove', (e)=>{
+          animateticket(e.changedTouches[0].clientY)
+        });
+      });
+      function animateticket(y){ 
+      if ((y <= screenHeight - 58  ) && (y >= 58)){
 
-child.addEventListener('touchstart', ()=>{ 
-  flag = 0; 
-  child.addEventListener('touchmove', (e)=>{
-    flag = 1; 
-    animateticket(e);
-  }
-);
-}); 
+        }
+      }
+    });
+*/
 
+// анимацию не забыть переделать
+</script>
 
-
-
-child.addEventListener('touchend', (e)=>{
-  let y = child.style.transform.slice(15, -3); 
-  if (y == ''){
-    y = `${Math.round(e.view.innerHeight -  50 )}`
-  }
-
-  child.setAttribute('data-posY',`${y}px`);
-  child.setAttribute('data-end-posY',`${Math.round(e.view.innerHeight -  50 )}px`);
-
-  if (flag == 0){ 
-
-    if (child.style.transform.slice(15,-3) == `${Math.round(e.view.innerHeight -  50 )}` || child.style.transform.slice(15,-3) == ''){
-      setTimeout (()=>{
-        child.classList.remove('on-click-animate-start');
-        child.style.transform = `translate(0 , 50px)`;
-      },276);
-      child.classList.add('on-click-animate-start');
-    }else if (child.style.transform.slice(15,-3) == 0 ){
-
-      setTimeout (()=>{
-        child.classList.remove('on-click-animate-end');
-        child.style.transform = `translate(0 , ${Math.round(e.view.innerHeight -  50 )}px)`
-      },276);
-      child.classList.add('on-click-animate-end');
-
+<script> 
   
-    }
-  }
+  $(document).ready(() => {
+    let parent = document.querySelector(".wrapper");
+    let child = document.querySelector(".ticket-block");
+    let footer = document.querySelector(".footer-menu");
+    let flag;
 
-  else if(flag == 1){
-    
-    if (Math.round(e.changedTouches[0].pageY) <= Math.round (e.view.innerHeight / 2)){
-       const style = document.createElement('style'); 
-       style.textContent = `@keyframes ticketAnimate{
+    child.addEventListener("touchstart", () => {
+      flag = 0;
+      child.addEventListener("touchmove", (e) => {
+        flag = 1;
+        animateticket(e);
+      });
+    });
+
+    child.addEventListener("touchend", (e) => {
+      let y = child.style.transform.slice(15, -3);
+      if (y == "") {
+        y = `${Math.round(e.view.innerHeight - 50)}`;
+      }
+
+      child.setAttribute("data-posY", `${y}px`);
+      child.setAttribute(
+        "data-end-posY",
+        `${Math.round(e.view.innerHeight - 50)}px`
+      );
+
+      if (flag == 0) {
+        if (
+          child.style.transform.slice(15, -3) ==
+            `${Math.round(e.view.innerHeight - 50)}` ||
+          child.style.transform.slice(15, -3) == ""
+        ) {
+          setTimeout(() => {
+            child.classList.remove("on-click-animate-start");
+            child.style.transform = `translate(0 , 50px)`;
+          }, 276);
+          child.classList.add("on-click-animate-start");
+        } else if (child.style.transform.slice(15, -3) == 0) {
+          setTimeout(() => {
+            child.classList.remove("on-click-animate-end");
+            child.style.transform = `translate(0 , ${Math.round(
+              e.view.innerHeight - 50
+            )}px)`;
+          }, 276);
+          child.classList.add("on-click-animate-end");
+        }
+      } else if (flag == 1) {
+        if (
+          Math.round(e.changedTouches[0].pageY) <=
+          Math.round(e.view.innerHeight / 2)
+        ) {
+          const style = document.createElement("style");
+          style.textContent = `@keyframes ticketAnimate{
         from { 
             transform: translate(0 , ${y}px); 
     
@@ -156,53 +189,52 @@ child.addEventListener('touchend', (e)=>{
       }
       .start-animate-ticket{ 
         animation: ticketAnimate 200ms linear forwards;  
-      }`
-      document.body.append(style); 
+      }`;
+          document.body.append(style);
 
-      setTimeout(()=>{
-        child.classList.remove('start-animate-ticket')
-        child.style.transform = `translate(0 , 50px)` 
-      }, 400)
-      child.classList.add('start-animate-ticket') 
-    } 
-    else{ 
-      const style = document.createElement('style'); 
-       style.textContent = `@keyframes ticketAnimateEnd{
+          setTimeout(() => {
+            child.classList.remove("start-animate-ticket");
+            child.style.transform = `translate(0 , 50px)`;
+          }, 400);
+          child.classList.add("start-animate-ticket");
+        } else {
+          const style = document.createElement("style");
+          style.textContent = `@keyframes ticketAnimateEnd{
         from { 
             transform: translate(0 , ${y}px); 
     
         }
         to{
-            transform: translate(0 , ${Math.round(e.view.innerHeight -  50 )}px); 
+            transform: translate(0 , ${Math.round(e.view.innerHeight - 50)}px); 
         }
       }
       .end-animate-ticket{  
         animation: ticketAnimateEnd 400ms linear forwards; 
-    }`
-      document.body.append(style); 
+    }`;
+          document.body.append(style);
 
-      setTimeout(()=>{
-        child.classList.remove('end-animate-ticket')
-        child.style.transform = `translate(0 , ${Math.round(e.view.innerHeight -  50 )}px)` 
-      }, 400)
-      child.classList.add('end-animate-ticket') 
-    } 
-    setTimeout(()=>{
-      let styles = document.body.querySelectorAll('style'); 
-      for (let kal of styles){
-        kal.remove()
+          setTimeout(() => {
+            child.classList.remove("end-animate-ticket");
+            child.style.transform = `translate(0 , ${Math.round(
+              e.view.innerHeight - 50
+            )}px)`;
+          }, 400);
+          child.classList.add("end-animate-ticket");
+        }
+        setTimeout(() => {
+          let styles = document.body.querySelectorAll("style");
+          for (let kal of styles) {
+            kal.remove();
+          }
+        }, 400);
       }
-    
-    }, 400)
-  }
-})
-  
-function animateticket(e){
+    });
 
-    if (Math.round( (e.changedTouches[0].pageY) >= 50) && (e.view.innerHeight - Math.round( e.changedTouches[0].pageY)  >= 50) ){ 
+    function animateticket(e) {
+      if (Math.round( (e.changedTouches[0].pageY) >= 50) && (e.view.innerHeight - Math.round( e.changedTouches[0].pageY)  >= 50) ){ 
       child.style.transform = `translate(0 , ${Math.round( e.changedTouches[0].pageY)}px)`  
     }
-}
+    }
+  }); 
 
-      })
 </script>

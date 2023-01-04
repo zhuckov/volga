@@ -1,1 +1,100 @@
-/* РАБОТАЕМ БРАТЬЯ */
+@media all and (min-height: 400px ) and (max-height: 450px){
+    .header-menu {
+        margin-top: 15px;
+    }
+    .header__block {
+        width: 30%;
+        height: 95px;
+    }
+    .header__block img {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 3px;
+    }
+    .header__block p {
+        display: inline-block;
+        height: 40px;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .pay-block {
+        height: 55px;
+        margin-bottom: 5px;
+        padding: 3%;
+    }
+    .pay-blocks{
+        bottom: 23%;
+    }
+    .title-block h2 {
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .pay-block-text {
+        font-size: 12px;
+    }
+    .pay-block__item p {
+        font-size: 12px;
+    }
+    .pay-block-button {
+        width: 76px;
+        height: 25px;
+        font-size: 13px;
+    }
+    .pay-block-info-img {
+        width: 20px;
+        height: 20px;
+    }
+    .ticket-block{ 
+        padding: 10px;
+    }
+    .ticket-block-title{
+        font-size: 14px;
+    }
+    .ticket{ 
+        margin-top: 10px;
+        padding: 0px 0px 10px 10px;
+        width: 95%;
+    }
+    .bus-number-block-da {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: -5px;
+        scale: 0.89;
+    }
+    p.bus-registration-number {
+        font-size: 20px;
+    }
+    p.date {
+        margin-bottom: 3px;
+        font-size: 14px;
+    }
+    p.bus-station{
+        font-size: 14px;
+    }
+    .price-block {
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 2px 5px 2px 5px;
+        margin-top: 5px;
+    }
+    p.trip-price{
+        font-size: 22px;
+    }
+    .bus-number-block {
+        margin-bottom: 5px;
+    }
+    p.bus-number {
+        font-size: 12px;
+    }
+    span.bus-number-region {
+        font-size: 10px;
+    }
+    .dohuya-vajniy-text-block {
+        font-size: 10px;
+
+    }
+    img.ticket-qrcode {
+        height: 133px;
+        width: 133px;
+    }
+}
