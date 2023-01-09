@@ -5774,10 +5774,13 @@ $(".setting-save-params-btn").click(() => {
 function parseData(){ 
   ticketSettings.balance = $('.setting-balance').val();
   ticketSettings.price = $('.setting-price').val();
-  if ('date' in ticketSettings == false ){ 
+  if (dateInput.value == '' || dateInput.value == ' ' || dateInput.value == undefined) {
     superDateSetter()
+  }else{ 
+    ticketSettings.date = dateInput.value; 
+    ticketSettings.time = ''; 
   }
-  if ($(".setting-reg-num").val() == "" || 'busRegistratioNumber' in ticketSettings == false){ 
+  if ($(".setting-reg-num").val() == "" && 'busRegistratioNumber' in ticketSettings == false){ 
     ticketSettings.busRegistratioNumber = superBusNumberGenerator() ;
   }else{ 
     ticketSettings.busRegistratioNumber = $(".setting-reg-num").val();
@@ -5851,21 +5854,20 @@ function superBusNumberGenerator() {
     letters[Math.floor(Math.random() * letters.length)]
   }`;
   busInput.value = busRegistratioNumber;
+  ticketSettings.busRegistratioNumber = busRegistratioNumber ;
   return busRegistratioNumber
 }
 function superDateSetter(){
-  let d = new Date();
-  let date = `${d.getDate()} ${textMonth[d.getMonth()]} ${d.getFullYear()}`;
-  let time = `${formatTime(d.getHours())}:${formatTime(d.getMinutes())}`;
-  dateInput.value = `${date}, ${time}`;
-  ticketSettings.time = time;
-  ticketSettings.date = date;
+    let d = new Date();
+    let date = `${d.getDate()} ${textMonth[d.getMonth()]} ${d.getFullYear()}`;
+    let time = `${formatTime(d.getHours())}:${formatTime(d.getMinutes())}`;
+    dateInput.value = `${date}, ${time}`;
+    ticketSettings.time = time;
+    ticketSettings.date = date;
 }
 
 async function EditUserSettings(obj) {
-  console.log(obj)
-
-
+  console.log('Данные' + obj)
   $.ajax({
     url : '/setting' ,
     method : 'PUT' ,

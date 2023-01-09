@@ -127,6 +127,9 @@
     box-sizing: border-box;
     
 }
+.bold-ruble{
+    transform: scale(0.47);
+}
 .blue-header__block{
     background-color: #36acf2;
 }

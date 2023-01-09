@@ -5,7 +5,7 @@
       <p class="wt">Новости<br />региона</p>
     </div>
     <div class="header__block header__block__with__shadow">
-      <img src="../images/rate-icon.svg" alt="" />
+      <img class='bold-ruble' src="../images/boldruble.svg" alt="" />
       <p>Тарифы</p>
     </div>
     <div id="fullscreen-btn" class="header__block header__block__with__shadow">
@@ -53,7 +53,7 @@
       <p class="ticket-block-title">Ваш билет</p>
     </div>
     <div class="ticket">
-      <div>
+      <div class="super-title-block">
         <div class="bus-number-block-da">
           <p class="bus-registration-number"><%- tripNum %></p>
         </div>
@@ -68,7 +68,7 @@
       <div class="qrcode-block">
         <img class="ticket-qrcode" src="../images/ticket-qrcode.svg" alt="" />
       </div>
-      <div class="syeta....">
+      <div class="syeta">
         <div class="bus-number-block">
           <p class="bus-number">
             <%- busRegistratioNumber %>
@@ -77,7 +77,7 @@
         </div>
         <div class="dohuya-vajniy-text-block">
           <p class="dohuya-vajniy-text">
-            ООО "Верхневолжское автотранспортное предприятие"
+            ООО "Верхневолжское автотранспортное<br>предприятие"
           </p>
         </div>
       </div>
@@ -99,33 +99,7 @@
   });
 </script>
 
-<script>
-/*
-  $(document).ready(()=>{
-    let screenHeight = window.screen.height; 
-    let footerHeight = document.querySelector('.footer-menu').offsetHeight;
-    let parent = document.querySelector(".wrapper");
-    let child = document.querySelector(".ticket-block");
-    let flag; 
-    console.log(window)
-    child.addEventListener('touchstart', ()=>{
-      child.addEventListener('touchmove', (e)=>{
-          animateticket(e.changedTouches[0].clientY)
-        });
-      });
-      function animateticket(y){ 
-      if ((y <= screenHeight - 58  ) && (y >= 58)){
-
-        }
-      }
-    });
-*/
-
-// анимацию не забыть переделать
-</script>
-
 <script> 
-  
   $(document).ready(() => {
     let parent = document.querySelector(".wrapper");
     let child = document.querySelector(".ticket-block");
@@ -236,5 +210,4 @@
     }
     }
   }); 
-
 </script>
