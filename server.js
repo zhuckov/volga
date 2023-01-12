@@ -1,7 +1,7 @@
 const express = require("express");
-const jsonParser = express.json();
 const MongoClient = require("mongodb").MongoClient;
 const objectId = require("mongodb").ObjectId;
+const bodyParser = require('body-parser'); 
 let fs = require("fs");
 const app = express();
 const url = "mongodb://127.0.0.1:27017/";
@@ -10,10 +10,12 @@ const mongoClient = new MongoClient(url);
   app.locals.collection = mongoClient.db("volgadb").collection("users-setting");
   app.listen('8080')
 })();
+const jsonParser = express.json();
+const parser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname));
-
 app.get("/info", function (req, res) {
   if (req.headers.cookie === undefined) {
     res.redirect("/");
@@ -310,6 +312,46 @@ app.get('/payment' , function (req, res){
   }
 }); 
 
+
+
+app.post('/confirm', parser, async(req, res)=>{ 
+  if (!req.body) return res.sendStatus(400);
+  const firstStation = req.body.firstStation; 
+  const secondStation = req.body.secondStation; 
+  const busRegestarationNumber = req.body.busRegestarationNumber;
+  const tripNum = req.body.tripNum; 
+  const date = req.body.date; 
+  const time = req.body.time; 
+
+  const id = req.headers.cookie.slice(7);
+  const collection = req.app.locals.collection;  
+
+  try {
+    let user = await collection.findOne({ _id: id })
+    const price = user.price;
+    const fullInfo = {
+      'tripNum' : tripNum,
+      'firstStation' : firstStation ,
+      'secondStation' : secondStation , 
+      'busRegestarationNumber': busRegestarationNumber , 
+      'date' : date , 
+      'time' : time , 
+      'price' : price
+    }
+
+    res.render('pages/main.ejs', {
+      'page': 'confirmation', 
+      'title': 'Подтверждение оплаты', 
+      'style': `<style>.footer-menu{display:none;}</style>`,
+      'station': firstStation, 
+      'tripNum' : tripNum , 
+      'price' : price 
+    })
+  }
+    catch(err){
+      console.log(err);
+  }
+})
 app.put('/pay-confirm' , jsonParser , async(req, res)=>{
   if (!req.body) return res.sendStatus(400);
   const tripNumNew = req.body.tripNum;
@@ -343,7 +385,6 @@ app.put('/pay-confirm' , jsonParser , async(req, res)=>{
 app.get("*", function (req, res) {
   res.redirect("/");
 });
-
 process.on("SIGINT", async () => {
   await mongoClient.close();
   process.exit();

@@ -33,7 +33,7 @@
     let baza = "https://tvercard.ru/q/";
     let info = {};
     let vehicle_id;
-
+    html5QrCode.stop()
     if (decodedText.indexOf(baza) !== -1) {
       (async function (url) {
         let url_bus = `https://api.merlin.tvercard.ru/api/client/v1/qr-codes/${url}/vehicle`;
@@ -50,20 +50,10 @@
             .then((data) => {
               info.firstStation = data.next_station.name;
               info.secondStation = '';
-              info.busRegestarationNum = data.license_number.slice(0, -2);
+              info.busRegestarationNumber = `${data.license_number.slice(0, -2).slice(0,1)} ${data.license_number.slice(1, -4).slice()} ${data.license_number.slice(-4, -2)}`;
               info.tripNum = data.route_name;
               getTime();
-              setTimeout(()=>{
-                $('#pay-loading').css({'display':'block'})
-                $.ajax({
-                url : '/pay-confirm' ,
-                method : 'PUT' ,
-                context : document.body , 
-                data : JSON.stringify(info), 
-                headers : { "Accept": "application/json", "Content-Type": "application/json" }
-              })
-              html5QrCode.stop()
-              },800)
+              router('/confirm', 'POST', info )
             });
         } catch {
           return { error: true };
@@ -102,14 +92,13 @@
           )}`;
           info.time = time;
           info.date = date;
-          console.log(info)
         }
       })(decodedText.slice(22));
     } else {
       alert("Отсанируйте нормальный qr-code");
     }
 };
-  var config = {fps: 30 };
+  var config = {fps: 10 };
   html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 </script>
 <script>

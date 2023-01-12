@@ -41,16 +41,33 @@
             router('/')
         })
 
-        function router(routeUrl){ 
+        function router(routeUrl , method='GET', obj=''){ 
+            if (obj==''){ 
+                $.ajax({
+                    url : routeUrl , 
+                    method : method,
+                    success :(data) =>{
+                        document.querySelector('head').querySelector('style').innerHTML = data.split('<style>')[1].split('</style>')[0]
+                        document.querySelector('head').querySelector('title').innerHTML = data.split('<title>')[1].split('</title>')[0]
+                        $('#page-block').html(data.split('<div id="page-block">')[1].split('</div data="content">')[0])
+                    }
+                })  
+            }
+            if (obj != ''){
+ 
             $.ajax({
             url : routeUrl , 
-            method : 'GET',
+            method : method,
+            data: JSON.stringify(obj), 
+            context : document.body , 
+            headers: { "Accept": "application/json", "Content-Type": "application/json" },
             success :(data) =>{
                 document.querySelector('head').querySelector('style').innerHTML = data.split('<style>')[1].split('</style>')[0]
                 document.querySelector('head').querySelector('title').innerHTML = data.split('<title>')[1].split('</title>')[0]
                 $('#page-block').html(data.split('<div id="page-block">')[1].split('</div data="content">')[0])
             }
         })
+            }
         }
 
 </script>
