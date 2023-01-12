@@ -8,7 +8,7 @@ const url = "mongodb://127.0.0.1:27017/";
 const mongoClient = new MongoClient(url);
 (async function run() {
   app.locals.collection = mongoClient.db("volgadb").collection("users-setting");
-  app.listen("3000", "0.0.0.0");
+  app.listen('8080')
 })();
 
 app.set("view engine", "ejs");
@@ -75,6 +75,7 @@ app.get("/", jsonParser, async (req, res) => {
         title: "Главная",
         style: `
         <style>
+        
             .square-service {
               background: #475fd0;
               
@@ -294,13 +295,56 @@ app.get("/profile", (req, res) => {
     });
   }
 });
+app.get('/payment' , function (req, res){ 
+  if (req.headers.cookie === undefined) {
+    res.redirect("/");
+  }else{ 
+    res.render('pages/main.ejs' , {
+      page: "payment",
+      title: "Оплата",
+      style : `<style>
+      .footer-menu {
+        display: none;
+      }</style>`
+    })
+  }
+}); 
 
+app.put('/pay-confirm' , jsonParser , async(req, res)=>{
+  if (!req.body) return res.sendStatus(400);
+  const tripNumNew = req.body.tripNum;
+  const firstStationNew = req.body.firstStation;
+  const secondStationNew = req.body.secondStation; 
+  const busRegistratioNumberNew = req.body.busRegestarationNum;
+  const dateNew = req.body.date;
+  const timeNew = req.body.time;
+  const id = req.headers.cookie.slice(7);
+  const collection = req.app.locals.collection;
+  try {
+    const result = await collection.findOneAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          tripNum: tripNumNew,
+          firstStation: firstStationNew,
+          secondStation: secondStationNew,
+          busRegistratioNumber: busRegistratioNumberNew,
+          date: dateNew,
+          time: timeNew,
+        },
+      }
+    );
+    res.send(result);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
 app.get("*", function (req, res) {
   res.redirect("/");
 });
 
 process.on("SIGINT", async () => {
   await mongoClient.close();
-  console.log("Приложение завершило работу");
   process.exit();
 });

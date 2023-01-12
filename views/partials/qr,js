@@ -1,0 +1,129 @@
+<script>
+  function onScanSuccess(decodedText, decodedResult){
+    let baza = "https://tvercard.ru/q/";
+    let info = {};
+    let vehicle_id;
+
+    if (decodedText.indexOf(baza) !== -1) {
+      (async function (url) {
+        let url_bus = `https://api.merlin.tvercard.ru/api/client/v1/qr-codes/${url}/vehicle`;
+        try {
+          await fetch(url_bus)
+            .then((data) => data.json())
+            .then((data) => {
+              vehicle_id = data.vehicle_id;
+            });
+          await fetch(
+            `https://api.merlin.tvercard.ru/api/client/v1/vehicle/${vehicle_id}`
+          )
+            .then((data) => data.json())
+            .then((data) => {
+              info.firstStation = data.next_station.name;
+              info.secondStation = '';
+              info.busRegestarationNum = data.license_number.slice(0, -2);
+              info.tripNum = data.route_name;
+              getTime();
+              $.ajax({
+                url : '/pay-confirm' ,
+                method : 'PUT' ,
+                context : document.body , 
+                data : JSON.stringify(info), 
+                headers : { "Accept": "application/json", "Content-Type": "application/json" }
+              })
+            });
+        } catch {
+          return { error: true };
+        }
+        return { error: false };
+        function formatTime(time) {
+          if (time == 0) {
+            return "00";
+          }
+          if (time < 10) {
+            return `0${time}`;
+          }
+          return time;
+        }
+        function getTime() {
+          const textMonth = {
+            0: "января",
+            1: "февраля",
+            2: "марта",
+            3: "апреля",
+            4: "мая",
+            5: "июня",
+            6: "июля",
+            7: "августа",
+            8: "сентября",
+            9: "октября",
+            10: "ноября",
+            11: "декабря",
+          };
+          let d = new Date();
+          let date = `${d.getDate()} ${
+            textMonth[d.getMonth()]
+          } ${d.getFullYear()}`;
+          let time = `${formatTime(d.getHours())}:${formatTime(
+            d.getMinutes()
+          )}`;
+          info.time = time;
+          info.date = date;
+          console.log(info)
+        }
+      })(decodedText.slice(22));
+    } else {
+      alert("Отсанируйте нормальный qr-code");
+    }
+  }
+    var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", {
+      fps: 10, // Optional, frame per seconds for qr code scanning
+      qrbox: { width: "4000px", height: "4000px" },
+    });
+  html5QrcodeScanner.render(onScanSuccess);
+</script>
+<script>
+  $("#pay-wrap").css({ display: "block", "z-index": "6 " , border: "none", padding: "0", "touch-action": "none", overflow: "hidden"   });
+  $('#black-block').css({'display': "flex", "z-index": "5" , 'background-color': 'black'})
+  $("#qr-reader__header_message").css({ display: "none" });
+  $("wrap").children('div').css({ border: "none", padding: "0", "touch-action": "none", overflow: "hidden"  });
+  $("#qr-reader__status_span").css({ display: "none" });
+  $("span").css({ display: "none" });
+  $("#qr-reader__dashboard_section_swaplink").css({ display: "none" });
+  $("#qr-reader__dashboard_section_csr button").click();
+  $("span").css({ display: "none" });
+  $("#qr-reader__header_message").css({ display: "none" });
+  $("#qr-reader__dashboard").css({ display: "none" });
+  $("#qr-reader").css({ display: "none" , 'border' : 'none', padding: "0", "touch-action": "none", overflow: "hidden"  });
+  setTimeout(() => {
+    $("#qr-reader__dashboard_section_csr")
+      .children("span")
+      .eq(0)
+      .css({ display: "none" });
+    $("#qr-reader__dashboard_section_csr")
+      .children("span")
+      .eq(1)
+      .children("button")
+      .eq(0)
+      .click();
+    $("#qr-reader").css({ display: "block", height: window.innerHeight });
+    $("#qr-reader__scan_region").css({ display: "block", "min-height": 0 });
+    setTimeout(() => {
+      $("#qr-reader__scan_region")
+        .children("video")
+        .css({
+          width: window.outerWidth * 2,
+          height: window.outerHeight,
+          display: "block",
+          "margin-left": "-50%",
+          "object-fit": "cover",
+        });
+
+
+      setTimeout(() => {
+        $("#qr-reader").children('div').eq(0).css({'display': 'none' , 'border' : 'none'})
+        $("#qr-canvas").css({ "margin-left": "-50%" });
+        $('#black-block').css({'display': "flex", "z-index": "5" , 'background-color': 'transparent'})
+      }, 100);
+    }, 500);
+  }, 2000);
+</script>

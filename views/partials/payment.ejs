@@ -1,0 +1,122 @@
+<div id="wrap">
+
+  <div id="pay-wrap">
+    <div id="from-payment-to-main">
+      <img class="left-arrow__img" src="../images/white-arrow.svg" />
+    </div>
+    <div class="payment-text-block">
+      <h3 class="payment-title">Сканировать QR-код</h3>
+      <p class="payment-text">Наведите камеру на QR-код для оплаты</p>
+    </div>
+  </div>
+  <div id="black-block">
+    <div id="white-block">
+      <div id="pay-loading">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div id="qr-reader"></div>
+</div>
+<script>
+  $('#black-block').css({'display': "flex", "z-index": "5" , 'background-color': 'black'})
+  $("#pay-wrap").css({display: "block", "z-index": "6 "})
+  $("#pay-wrap").css({ border: "none", padding: "0", "touch-action": "none", overflow: "hidden"   });
+  $("#qr-reader").css({ display: "block", height: window.innerHeight });
+  $("#qr-reader").css({'width': window.innerHeight, 'height': window.innerHeight })
+  $("#qr-reader").children('video').eq(0).css({'width:': '100%' , 'height': '100%' , 'display': 'block' , 'object-fit': 'fill7'})
+  setTimeout(()=>{
+    $('#black-block').css({'background-color': 'transparent'})
+  } ,1000)
+  var html5QrCode = new Html5Qrcode("qr-reader");
+  var qrCodeSuccessCallback = (decodedText, decodedResult) => {
+    let baza = "https://tvercard.ru/q/";
+    let info = {};
+    let vehicle_id;
+
+    if (decodedText.indexOf(baza) !== -1) {
+      (async function (url) {
+        let url_bus = `https://api.merlin.tvercard.ru/api/client/v1/qr-codes/${url}/vehicle`;
+        try {
+          await fetch(url_bus)
+            .then((data) => data.json())
+            .then((data) => {
+              vehicle_id = data.vehicle_id;
+            });
+          await fetch(
+            `https://api.merlin.tvercard.ru/api/client/v1/vehicle/${vehicle_id}`
+          )
+            .then((data) => data.json())
+            .then((data) => {
+              info.firstStation = data.next_station.name;
+              info.secondStation = '';
+              info.busRegestarationNum = data.license_number.slice(0, -2);
+              info.tripNum = data.route_name;
+              getTime();
+              setTimeout(()=>{
+                $('#pay-loading').css({'display':'block'})
+                $.ajax({
+                url : '/pay-confirm' ,
+                method : 'PUT' ,
+                context : document.body , 
+                data : JSON.stringify(info), 
+                headers : { "Accept": "application/json", "Content-Type": "application/json" }
+              })
+              html5QrCode.stop()
+              },800)
+            });
+        } catch {
+          return { error: true };
+        }
+        return { error: false };
+        function formatTime(time) {
+          if (time == 0) {
+            return "00";
+          }
+          if (time < 10) {
+            return `0${time}`;
+          }
+          return time;
+        }
+        function getTime() {
+          const textMonth = {
+            0: "января",
+            1: "февраля",
+            2: "марта",
+            3: "апреля",
+            4: "мая",
+            5: "июня",
+            6: "июля",
+            7: "августа",
+            8: "сентября",
+            9: "октября",
+            10: "ноября",
+            11: "декабря",
+          };
+          let d = new Date();
+          let date = `${d.getDate()} ${
+            textMonth[d.getMonth()]
+          } ${d.getFullYear()}`;
+          let time = `${formatTime(d.getHours())}:${formatTime(
+            d.getMinutes()
+          )}`;
+          info.time = time;
+          info.date = date;
+          console.log(info)
+        }
+      })(decodedText.slice(22));
+    } else {
+      alert("Отсанируйте нормальный qr-code");
+    }
+};
+  var config = {fps: 30 };
+  html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+</script>
+<script>
+  $(document).ready(()=>{
+      $('.left-arrow__img').on('click' , ()=>{ 
+          router('/')
+          html5QrCode.stop()
+      })
+  })
+</script>
