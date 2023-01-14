@@ -101,7 +101,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    width: 95%;
+    width: 96%;
 }
 .header-menu{
     display: flex;

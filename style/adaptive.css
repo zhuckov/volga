@@ -1,4 +1,109 @@
-
+@media screen and (max-height: 400px) and (max-width: 500px){
+    .header__block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    .header-menu {
+        margin-top: 15px;
+    }
+    .header__block img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+    }
+    .header__block p {
+        height: 30px;
+        font-size: 12px;
+    }
+    .pay-block {
+        height: 50px;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+    .title-block h2 {
+        font-size: 14px;
+    }
+    .pay-block-text {
+        font-size: 10px;
+    }
+    .pay-blocks {
+        bottom: 100px;
+    }
+    .pay-block__item p {
+        font-size: 10px;
+    }
+    .pay-block-button {
+        width: 72px;
+        height: 24px;
+        font-size: 12px;
+    }
+    .pay-block-info-img {
+        width: 18px;
+        height: 18px;
+    }
+    .ticket-block{
+        padding: 10px 15px 8px 15px;
+    }
+    .ticket {
+        padding: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    p.bus-registration-number {
+        font-size: 20px;
+    }
+    .bus-number-block-da {
+        margin-top: 3px;
+        margin-bottom: -3px;
+        transform: scale(0.7);
+        margin-left: -15px;
+    }
+    p.date {
+        font-size: 14px;
+    }
+    .bus-station{font-size: 14px;}
+    .price-block {
+        border: 1px solid black;
+        margin-top: 3px;
+    }
+    p.trip-price {
+        font-size: 18px;
+    }
+    .ticket {
+        padding: 0 0 0px 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    p.ticket-block-title {
+        font-size: 14px;
+    }
+    p.bus-number {
+        font-size: 12px;
+    }
+    .bus-number-region{
+        font-size: 11px;
+    }
+    .bus-number-block{
+        margin-bottom:3px;
+    }
+    .dohuya-vajniy-text-block {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .profile-link-text {
+        font-size: 14px;
+    }
+    .profile-item__img img {
+        width: 30px;
+        height: 30px;
+    }
+}
 /* от 400пх до 450пх */
 
 @media all and (min-height: 400px ) and (max-height: 450px){
@@ -65,7 +170,7 @@
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: -17px;
-    scale: 0.7;
+    transform:scale(0.7);
 }
     p.bus-registration-number {
         font-size: 20px;
@@ -171,7 +276,7 @@
         margin-top: 3px;
         margin-bottom: 0px;
         margin-left: -13px;
-        scale: 0.75;
+        transform: scale(0.75);
     }
     p.bus-registration-number {
         font-size: 20px;
@@ -278,7 +383,7 @@
         margin-top: 5px;
         margin-bottom: 3px;
         margin-left: -13px;
-        scale: 0.73;
+        transform: scale(0.73)
     }
     p.bus-registration-number {
         font-size: 20px;
@@ -554,6 +659,265 @@
 
     }
     
+}
+@media all and (min-width: 800px) and (min-height: 900px){
+    .header__block {
+        width: 195px;
+        height: 200px;
+    }
+    p.ticket-block-title {
+        font-size: 18px;
+    }
+    .title-block h2 {
+        font-size: 22px;
+    }
+    .header__block img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .header__block p {
+        height: 60px;
+        font-size: 20px;
+    }
+    .pay-block {
+        height: 105px;
+        margin-bottom: 10px;
+        padding: 15px;
+        width: 99%;
+    }
+    .pay-block-info-img {
+        width: 30px;
+        height: 30px;
+    }
+    .pay-block-text {
+        font-size: 20px;
+    }
+    .pay-block__item p {
+        font-size: 20px;
+    }
+    .pay-block-button {
+        width: 120px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .footer-menu {
+        height: 65px;
+        padding: 5px 20px 9px 20px;
+    }
+    p.date ,
+    span.time ,
+    .bus-station , 
+    p.bus-number {
+        font-size: 20px;
+    }
+    span.bus-number-region {
+        font-size: 18px;
+    }
+    .dohuya-vajniy-text-block {
+        font-size: 18px;
+    }
+    .pay-blocks {
+        bottom: 120px;
+    }
+    .footer-menu__item {
+        margin-top: 5px;
+        transform: scale(0.95);
+    }
+    .pay-icon-spc {
+        margin-top: -35px;
+    }
+    .ticket-block {
+
+        bottom: 115px;
+        padding: 15px;
+
+    }
+}
+@media all and (min-width: 800px) and (min-height: 1000px){
+    .pay-circle {
+        width: 60px;
+        height: 60px;
+    }
+    .pay-circle-inner {
+        width: 30px;
+        height: 30px;
+    }
+    .pay-circle-inner img {
+        width: 26px;
+        height: 26px;
+    }
+    .footer-menu__item.btn-payment{
+        margin-top: -35px;
+    }
+    .header__block {
+        width: 230px;
+        height: 230px;
+        border-radius: 10px;
+    }
+    .header__block img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+    .header__block p {
+        height: 60px;
+        font-size: 24px;
+    }
+    .pay-block {
+        height: 130px;
+        margin-bottom: 15px;
+        padding: 20px;
+    }
+    .pay-blocks {
+        bottom: 140px;
+    }
+    .title-block h2 {
+        font-size: 30px;
+    }
+    .pay-block-text {
+        font-size: 24px;
+    }
+    .pay-block__item p {
+        font-size: 24px;
+    }
+    .pay-block-button {
+        width: 150px;
+        height: 44px;
+        font-size: 24px;
+        border-radius: 10px;
+    }
+    .pay-block-info-img {
+        width: 40px;
+        height: 40px;
+    }
+    .footer-menu {
+        height: 80px;
+        padding: 5px 30px 10px 30px;
+    }
+    .footer-menu-text {
+        margin-top: 8px;
+        font-size: 16px;
+    }
+    .footer-menu__item {
+        margin-top: 5px;
+        transform: scale(1.25);
+    }
+    .profile-item__img img {
+        width: 60px;
+        height: 60px;
+    }
+    .profile-text-block {
+        margin-top: 15px;
+    }
+    .profile-link-text {
+        font-size: 22px;
+    }
+    .setting-title {
+        margin-bottom: 20px;
+        margin-top: 15px;
+        font-size: 28px;
+    }
+    .setting-text {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .input-block {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    .date-setter{
+        font-size: 22px;
+    }
+    .bus-number-generate{
+        font-size: 22px;
+    }
+    .setting-input {
+        border: 1.5px solid grey;
+        font-size: 24px;
+        height: 50px;
+    }
+    .select2-container--default .select2-selection--single {
+        border: 1.5px solid rgb(118, 118, 118);
+    }
+    .select2-container .select2-selection--single {
+        height: 55px;
+        padding: 9px 0px 0px 0px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 30px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 35px;
+        font-size: 24px;
+    }
+    .select2-container--default .select2-results>.select2-results__options {
+        max-height: 250px;
+        font-size: 28px;
+    }
+    .select2-search--dropdown .select2-search__field {
+        height: 50px;
+        font-size: 22px;
+    }
+    p.ticket-block-title {
+        font-size: 24px;
+    }
+    .ticket-block {
+        bottom: 135px;
+    }
+    .bus-number-block-da {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        transform: scale(1.5);
+        margin-left: 28px;
+    }
+    p.date, span.time, .bus-station, p.bus-number {
+        font-size: 30px;
+    }
+    span.bus-number-region {
+        font-size: 26px;
+    }
+    p.dohuya-vajniy-text {
+        font-size: 26px;
+    }
+    .about-the-trip-block {
+        margin-top: 30px;
+    }
+    p.trip-price {
+        font-size: 40px;
+    }
+    .price-block {
+        border-radius: 15px;
+        padding: 10px 15px 10px 15px;
+        margin-top: 30px;
+    }
+    p.trip-price {
+        font-size: 46px;
+    }
+    .ticket {
+        margin-top: 40px;
+        padding: 20px;
+        width: 90%;
+        height: 90%;
+    }
+    img.ticket-qrcode {
+        height: 40vh;
+        width: 60vw;
+    }
+    .setting-save-params-btn {
+        width: 200px;
+        height: 50px;
+        border: 1px solid #475fd0;
+        border-radius: 10px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-size: 26px;
+    }
 }
 @media all and (max-width: 300px) {
     .header__block {
