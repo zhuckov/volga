@@ -1,3 +1,18 @@
+@media screen and (max-height : 400px) {
+    
+}
+@media screen and (max-height : 600px) {
+    
+}
+@media screen and (max-height : 800px) {
+
+}
+@media screen and (max-height : 1000px) {
+    
+}
+@media screen and (min-height : 1200px) {
+    
+}
 .wrapz {
     padding: 10px;
     touch-action: none;
@@ -8,11 +23,11 @@
     margin-left: -5px;
 }
 .title-confirmation {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 500;
 }
 .path-text {
-    font-size: 17px;
+    font-size: 18px;
 }
 .your-geo__block{
     display: flex;
@@ -40,12 +55,15 @@ button.confirm__btn {
     background-color: #0041ff;
 }
 span.bold-path__text{
-    font-weight: 500;
+    font-weight: 700;
 }
 #spc-flex-block{
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
+}
+#section-fisrt{
+    padding-left: 5px;
 }
 #section-second{
     margin-bottom: 20px;
@@ -75,11 +93,15 @@ span.bold-path__text{
     font-size: 24px;
 }
 .back-to-payment__block{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .back-to-payment__block ,
 .title-confirmation__block,
 .path-text__block
 {
-    margin-bottom:10px
+    margin-bottom:15px
+}
+
+.bold-price__text{
+    font-weight: 500;
 }

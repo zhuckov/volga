@@ -33,6 +33,7 @@
     let baza = "https://tvercard.ru/q/";
     let info = {};
     let vehicle_routeId;
+    let next;
     html5QrCode.stop()
     if (decodedText.indexOf(baza) !== -1) {
       (async function (url) {
@@ -44,6 +45,7 @@
               vehicle_routeId = data.route_id;
               info.tripNum = data.route_name;
               info.secondStation = '';
+              next = data.next_station_id;
               getTime();
               info.busRegestarationNumber = `${data.license_number.slice(0, -2).slice(0,1)} ${data.license_number.slice(1, -4).slice()} ${data.license_number.slice(-4, -2)}`;
             });
@@ -52,7 +54,16 @@
           )
             .then((data) => data.json())
             .then((data) => {
-              info.title = data.start_end_stations;
+              if (next != '' && next != false && next != ' ' && next != undefined){ 
+                if (data.stations != {} &&  data.stations != '' && data.stations != false && data.stations != ' ' && data.stations != undefined){
+                  for (station of data.stations){ 
+                    if (station.station_id == next){
+                      info.firstStation = station.name;
+                     }
+                  }
+                }
+              }
+              info.title = data.title;
               router('/confirm', 'POST', info )
             });
         } catch {
