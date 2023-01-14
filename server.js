@@ -322,7 +322,7 @@ app.post('/confirm', parser, async(req, res)=>{
   const tripNum = req.body.tripNum; 
   const date = req.body.date; 
   const time = req.body.time; 
-
+  const routes = req.body.title; 
   const id = req.headers.cookie.slice(7);
   const collection = req.app.locals.collection;  
 
@@ -336,13 +336,15 @@ app.post('/confirm', parser, async(req, res)=>{
       'busRegestarationNumber': busRegestarationNumber , 
       'date' : date , 
       'time' : time , 
-      'price' : price
+      'price' : price,
+      'routes': routes
     }
 
     res.render('pages/main.ejs', {
       'page': 'confirmation', 
       'title': 'Подтверждение оплаты', 
       'style': `<style>.footer-menu{display:none;}</style>`,
+      'routes': routes ,
       'station': firstStation, 
       'tripNum' : tripNum , 
       'price' : price 

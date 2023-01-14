@@ -1,0 +1,85 @@
+.wrapz {
+    padding: 10px;
+    touch-action: none;
+}
+.back-to-payment__img{
+    width: 35px;
+    height: 35px;
+    margin-left: -5px;
+}
+.title-confirmation {
+    font-size: 28px;
+    font-weight: 500;
+}
+.path-text {
+    font-size: 17px;
+}
+.your-geo__block{
+    display: flex;
+    flex-direction: row;
+}
+.your-geo-useless-text {
+    font-size: 16px;
+    color: grey;
+}
+
+.price__block {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+button.confirm__btn {
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 13px;
+    font-size: 18px;
+    color: white;
+    background-color: #0041ff;
+}
+span.bold-path__text{
+    font-weight: 500;
+}
+#spc-flex-block{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+#section-second{
+    margin-bottom: 20px;
+}
+.your-geo-trip-confirm__icon {
+    margin-top: 7px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25px;
+    height: 120px;
+}
+.your-geo-trip-confirm-circle{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: red;
+}
+.your-geo-trip-confirm-rect{
+    width: 3px;  
+    height: 80px;
+    background-color: red;  
+}
+.your-geo-title-station-bold{
+    font-weight: 600;
+    font-size: 24px;
+}
+.back-to-payment__block{
+    margin-top: 5px;
+}
+.back-to-payment__block ,
+.title-confirmation__block,
+.path-text__block
+{
+    margin-bottom:10px
+}

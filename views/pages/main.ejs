@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style/main-styles.css">
-    <link rel="stylesheet" href="../style/footer.css">
-    <link rel="stylesheet" href="../style/profile.css">
-    <link rel="stylesheet" href="../style/ticket-setting-style.css">
+    <link rel="stylesheet" type="text/css" href="../style/footer.css">
+    <link rel="stylesheet" type="text/css" href="../style/profile.css">
+    <link rel="stylesheet" type="text/css" href="../style/ticket-setting-style.css">
     <link rel="stylesheet" type="text/css" href="../style/adaptive.css">
     <link rel="stylesheet" type='text/css' href="../style/payment.css">
+    <link rel="stylesheet" type="text/css" href="../style/confirm.css">
     <title><%- title %></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
@@ -41,7 +42,7 @@
             router('/')
         })
 
-        function router(routeUrl , method='GET', obj=''){ 
+        function router(routeUrl , method='GET', obj=''){
             if (obj==''){ 
                 $.ajax({
                     url : routeUrl , 
@@ -54,7 +55,7 @@
                 })  
             }
             if (obj != ''){
- 
+            console.log(obj)
             $.ajax({
             url : routeUrl , 
             method : method,

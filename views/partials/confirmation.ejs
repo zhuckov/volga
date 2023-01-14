@@ -1,28 +1,47 @@
-<div class="wrap">
-    <div class="back-to-payment__block">
-        <img class="back-to-payment__img" src="../images/arrow.svg" alt="">
-    </div>
-    <div class="title-confirmation__block">
-        <h3 class="title-confirmation">Маршрут</h3>
-    </div>
-    <div class="path-text__block">
-        <p class="path-text__block">Начальная станция - конечная, <span class="bold-path__text">№<%- tripNum %></span></p>
-    </div>
-    <div class="your-geo__wrap">
-        <div class="your-geo__block">
-            <div class="your-geo-path-img__block">
-                <img src="../images/trip-confirm.svg" alt="">
+<div class="wrap wrapz">
+    <div id="spc-flex-block">
+        <section>
+            <div class="back-to-payment__block">
+                <img class="back-to-payment__img" src="../images/arrow.svg" alt="">
             </div>
-            <div class="your-geo-text__block">
-                <div class="your-geo-title-station"><%- station %></div>
-                <div class="your-geo-useless-text">Вы сейчас здесь</div>
+            <div class="title-confirmation__block">
+                <p class="title-confirmation">Маршрут</p>
             </div>
-        </div>
-    </div>
-    <div class="price__block">
-        <div class="price__text"> <%- price %> ₽</div>
-    </div>
-    <div class="confirm__block">
-        <button class="confirm__btn">Со счета</button>
+            <div class="path-text__block">
+                <p class="path-text"><%- routes %>, <span class="bold-path__text">№<%- tripNum %></span></p>
+            </div>
+            <div class="your-geo__wrap">
+                <div class="your-geo__block">
+                    <div class="your-geo-path-img__block">
+                        <div class="your-geo-trip-confirm__icon">
+                            <div class="your-geo-trip-confirm-circle"></div>
+                            <div class="your-geo-trip-confirm-rect"></div>
+                        </div>
+
+
+                    </div>
+                    <div class="your-geo-text__block">
+                        <div class="your-geo-title-station"><span class="your-geo-title-station-bold"><%- station %></span></div>
+                        <div class="your-geo-useless-text">Вы сейчас здесь</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-second">
+            <div class="price__block">
+                <div class="price__text"> <p><span class="bold-path__text"><%- price %></span>₽</p></div>
+            </div>
+            <div class="confirm__block">
+                <button class="confirm__btn">Со счета</button>
+            </div>
+        </section>
     </div>
 </div>
+<script> 
+    $(document).ready(()=>{
+        $('#spc-flex-block').css({'height': window.outerHeight, 'box-sizing' : 'border-box'})
+        $('.back-to-payment__img').on('click', ()=>{
+            router('/payment')
+        })
+    })
+</script>

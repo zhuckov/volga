@@ -32,7 +32,7 @@
   var qrCodeSuccessCallback = (decodedText, decodedResult) => {
     let baza = "https://tvercard.ru/q/";
     let info = {};
-    let vehicle_id;
+    let vehicle_routeId;
     html5QrCode.stop()
     if (decodedText.indexOf(baza) !== -1) {
       (async function (url) {
@@ -41,18 +41,18 @@
           await fetch(url_bus)
             .then((data) => data.json())
             .then((data) => {
-              vehicle_id = data.vehicle_id;
+              vehicle_routeId = data.route_id;
+              info.tripNum = data.route_name;
+              info.secondStation = '';
+              getTime();
+              info.busRegestarationNumber = `${data.license_number.slice(0, -2).slice(0,1)} ${data.license_number.slice(1, -4).slice()} ${data.license_number.slice(-4, -2)}`;
             });
           await fetch(
-            `https://api.merlin.tvercard.ru/api/client/v1/vehicle/${vehicle_id}`
+            `https://api.merlin.tvercard.ru/api/client/v1/routes/${vehicle_routeId}`
           )
             .then((data) => data.json())
             .then((data) => {
-              info.firstStation = data.next_station.name;
-              info.secondStation = '';
-              info.busRegestarationNumber = `${data.license_number.slice(0, -2).slice(0,1)} ${data.license_number.slice(1, -4).slice()} ${data.license_number.slice(-4, -2)}`;
-              info.tripNum = data.route_name;
-              getTime();
+              info.title = data.start_end_stations;
               router('/confirm', 'POST', info )
             });
         } catch {
