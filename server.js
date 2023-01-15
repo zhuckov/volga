@@ -347,7 +347,8 @@ app.post('/confirm', parser, async(req, res)=>{
       'routes': routes ,
       'station': firstStation, 
       'tripNum' : tripNum , 
-      'price' : price 
+      'price' : price, 
+      'fullInfo': fullInfo
     })
   }
     catch(err){
@@ -359,7 +360,7 @@ app.put('/pay-confirm' , jsonParser , async(req, res)=>{
   const tripNumNew = req.body.tripNum;
   const firstStationNew = req.body.firstStation;
   const secondStationNew = req.body.secondStation; 
-  const busRegistratioNumberNew = req.body.busRegestarationNum;
+  const busRegistratioNumberNew = req.body.busRegestarationNumber;
   const dateNew = req.body.date;
   const timeNew = req.body.time;
   const id = req.headers.cookie.slice(7);

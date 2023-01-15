@@ -4,7 +4,7 @@
             <div id="successful-payment">
             <div class="successful-payment-back-to-main__block"><img class="successful-payment-back-to-main__img" src="../images/cross.svg" alt="x"></div>
             <div class="successful-payment-image__block"><img class="successful-payment-image" src="../images/checkmark.svg" alt=""></div>
-            <div class="successful-payment-text__block"><p class="successful-payment-text">Оплачено <%- price %></p></div>
+            <div class="successful-payment-text__block"><p class="successful-payment-text">Оплачено <%- price %>₽</p></div>
             </div>
         </div>
         <section id="section-fisrt">
@@ -46,9 +46,22 @@
 </div>
 <script> 
     $(document).ready(()=>{
+        let initData = JSON.parse('<%-JSON.stringify(fullInfo)%>');
         $('#spc-flex-block').css({'height': window.outerHeight, 'box-sizing' : 'border-box'})
         $('.back-to-payment__img').on('click', ()=>{
             router('/payment')
         })
-    })
+        $('.confirm__btn').on('click', ()=>{
+            $.ajax({
+                url:'/pay-confirm',
+                method:'PUT',
+                data: JSON.stringify(initData), 
+                context : document.body , 
+                headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            })
+            $('#successful-payment__wrap').css({'display':'flex'})
+        })
+        $('.successful-payment-back-to-main__img').on('click', ()=>{router('/')})   
+
+        })
 </script>
