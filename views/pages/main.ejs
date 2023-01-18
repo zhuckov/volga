@@ -30,10 +30,6 @@
     </div data="content">
         <%- include('../partials/footer') %>
 <script>
-        $('.btn-tutorial').on('click' , ()=>{ 
-
-            router('/info')
-        })
         $('.btn-profile').on('click' , ()=>{ 
             router('/profile')
         })
@@ -57,6 +53,7 @@
                 })  
             }
             if (obj != ''){
+            console.log(obj)
             $.ajax({
             url : routeUrl , 
             method : method,

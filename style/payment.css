@@ -144,7 +144,15 @@
     font-size: 18px;
   }
   }
-
+  @media screen and (min-height: 1000px) {
+    .payment-title {
+      font-size: 36px;
+      margin-bottom: 5px;
+  }
+  .payment-text {
+    font-size: 26px;
+  }
+  }
   #black-block{
       padding: 0px;
       touch-action: none;

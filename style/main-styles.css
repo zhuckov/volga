@@ -178,8 +178,8 @@ p.bus-registration-number {
     font-weight: 400;
     font-size: 22px;
 }
-span.time {
-    font-weight: 700;
+#time{
+    font-weight: 600;
 }
 .pay-block__item p {
     font-size: 14px;

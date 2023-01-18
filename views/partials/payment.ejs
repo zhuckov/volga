@@ -19,12 +19,48 @@
   <div id="qr-reader"></div>
 </div>
 <script>
+  sizing()
+  window.addEventListener('resize' , ()=>{
+    console.log('a') 
+    sizing()
+  })
+  function sizing(){ 
+      var base; 
+      if (window.innerHeight >= window.innerWidth){
+        base = window.innerHeight;
+        if (window.innerHeight> 500){
+          base = window.innerHeight+200;
+        }
+        if (window.innerHeight> 1000){
+          base = window.innerHeight+300;
+        }
+        if (window.innerHeight> 1300){
+          base = window.innerHeight+350;
+        }
+
+    
+      }
+      if (window.innerWidth > window.innerHeight){ 
+        base = window.innerWidth * 2; 
+      }
+      if (window.innerWidth < 500 && window.innerHeight < 500){ 
+        base = 600
+      }
+
+
+      $("#qr-reader").children('video').eq(0).css({'width:': '100%' , 'height': '100%' , 'display': 'block' , 'object-fit': 'fill7'})
+      $("#qr-reader").css({ display: "block", height: base });
+      $("#qr-reader").css({'width': base, 'height': base})
+
+    } 
+
+
   $('#black-block').css({'display': "flex", "z-index": "5" , 'background-color': 'black'})
   $("#pay-wrap").css({display: "block", "z-index": "6 "})
   $("#pay-wrap").css({ border: "none", padding: "0", "touch-action": "none", overflow: "hidden"   });
-  $("#qr-reader").css({ display: "block", height: window.innerHeight });
-  $("#qr-reader").css({'width': window.innerHeight, 'height': window.innerHeight })
-  $("#qr-reader").children('video').eq(0).css({'width:': '100%' , 'height': '100%' , 'display': 'block' , 'object-fit': 'fill7'})
+
+
+
   setTimeout(()=>{
     $('#black-block').css({'background-color': 'transparent'})
   } ,1000)
@@ -109,7 +145,7 @@
       alert("Отсанируйте нормальный qr-code");
     }
 };
-  var config = {fps: 10 };
+  var config = {fps: 30 };
   html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 </script>
 <script>

@@ -2,7 +2,6 @@ const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const objectId = require("mongodb").ObjectId;
 const bodyParser = require('body-parser'); 
-let fs = require("fs");
 const app = express();
 const url = "mongodb://127.0.0.1:27017/";
 const mongoClient = new MongoClient(url);
@@ -12,43 +11,11 @@ const mongoClient = new MongoClient(url);
 })();
 const jsonParser = express.json();
 const parser = bodyParser.json()
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname));
-app.get("/info", function (req, res) {
-  if (req.headers.cookie === undefined) {
-    res.redirect("/");
-  } else {
-    res.render("pages/main.ejs", {
-      title: "Информация",
-      page: "info",
-      style: `
-    <style>
-    #page-block{ 
-      padding:10px
-    }
-    .meg {
-      border-right: 17px solid #475fd0;
 
-      }
-        .meg-parr {
-
-          background-color: #475fd0;
-
-      }
-            .meg-rect {
-
-              background-color: #475fd0;
-            }
-.tutorial-text{ 
-  color: #475fd0; 
-}
-    </style>
-  `,
-    });
-  }
-});
 
 app.get("/", jsonParser, async (req, res) => {
   const collection = req.app.locals.collection;
@@ -67,8 +34,8 @@ app.get("/", jsonParser, async (req, res) => {
       firstStation: "Мигалово",
       secondStation: "Энергоремонт",
       busRegistratioNumber: "А 069 ТО",
-      date: "10 декабря 2022, ",
-      time: "16:33",
+      date: "1 января 2023, ",
+      time: "00:01",
     };
     try {
       await collection.insertOne(userSetting);

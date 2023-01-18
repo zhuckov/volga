@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhuckov/volgacringe.git"
+    "url": "NO LINK"
   },
   "author": "Водитель 33 автобуса",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhuckov/volgacringe/issues"
+    "url": "NO LINK"
   },
-  "homepage": "https://github.com/zhuckov/volgacringe",
+  "homepage": "NO LINK",
   "dependencies": {
     "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.6",
@@ -23,6 +23,7 @@
     "express": "^4.18.2",
     "jquery": "^3.6.2",
     "mongodb": "4.12",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "request": "^2.88.2"
   }
 }

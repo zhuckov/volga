@@ -5774,12 +5774,16 @@ $(".setting-save-params-btn").click(() => {
 function parseData(){ 
   ticketSettings.balance = $('.setting-balance').val();
   ticketSettings.price = $('.setting-price').val();
-  if (dateInput.value == '' || dateInput.value == ' ' || dateInput.value == undefined) {
-    superDateSetter()
-  }else{ 
-    ticketSettings.date = dateInput.value; 
-    ticketSettings.time = ''; 
-  }
+    if (dateInput.value == '' || dateInput.value == ' ' || dateInput.value == undefined) {
+      superDateSetter()
+    }
+    if  (dateInput.value == '' && time in ticketSettings == false ){ 
+      ticketSettings.date = dateInput.value; 
+      ticketSettings.time = ''; 
+    }
+
+
+
   if ($(".setting-reg-num").val() == "" && 'busRegistratioNumber' in ticketSettings == false){ 
     ticketSettings.busRegistratioNumber = superBusNumberGenerator() ;
   }else{ 
@@ -5798,12 +5802,13 @@ function parseData(){
     }else { 
       ticketSettings.firstStation = getStations($('.tripNum').val())[0];
     }
-    if ($('.secondStationSelect').val() != '-- Выберите остановку --'){ 
-      ticketSettings.secondStation = $('.secondStationSelect').find(":selected")[0].innerHTML
-    }else { 
-      ticketSettings.secondStation = getStations($('.tripNum').val())[getStations($('.tripNum').val()).length-1];
-    }
 
+    if ($('.secondStationSelect').val() !== '-- Выберите остановку --'){ 
+      ticketSettings.secondStation = ' - ' + $('.secondStationSelect').find(":selected")[0].innerHTML
+    }
+    if ($('.secondStationSelect').val() == '-- Выберите остановку --'){ 
+      ticketSettings.secondStation = ''
+    }
   }
   
   EditUserSettings(JSON.stringify(ticketSettings));
@@ -5862,7 +5867,7 @@ function superDateSetter(){
     let date = `${d.getDate()} ${textMonth[d.getMonth()]} ${d.getFullYear()}`;
     let time = `${formatTime(d.getHours())}:${formatTime(d.getMinutes())}`;
     dateInput.value = `${date}, ${time}`;
-    ticketSettings.time = time;
+    ticketSettings.time = ", " + time;
     ticketSettings.date = date;
 }
 

@@ -15,6 +15,74 @@
         font-size: 15px;
     }
 }
+
+@media screen and (max-height : 600px) {
+    .back-to-payment__img {
+        width: 24px;
+        height: 24px;
+        margin-left: -6px;
+    }
+    .back-to-payment__block, .title-confirmation__block, .path-text__block {
+        margin-bottom: 5px;
+    }
+    .back-to-payment__img {
+        width: 24px;
+        height: 24px;
+        margin-left: -6px;}
+      .title-confirmation {
+        font-size: 22px;}
+      .path-text {
+            font-size: 15px;}
+      .price__block{
+        font-size: 22px;
+        margin-bottom: 10px;}
+      button.confirm__btn {
+        height: 45px;
+        font-size: 16px;}
+      #section-second {
+        margin-bottom: 20px;}
+      .back-to-payment__block , .title-confirmation__block, .path-text__block {
+        margin-bottom: 5px;
+      }
+}
+
+@media screen and (max-height : 800px) {
+    .back-to-payment__block, .title-confirmation__block, .path-text__block {
+        margin-bottom: 5px;
+    }
+    .back-to-payment__img {
+        width: 30px;
+        height: 30px;
+    }
+    .title-confirmation {
+        font-size: 24px;
+    }
+    .your-geo-useless-text {
+        font-size: 14px;
+    }
+    #section-second {
+        margin-bottom: 20px;
+    }
+    
+    .price__block {
+    font-size: 22px;
+    margin-bottom: 15px;
+    }
+    button.confirm__btn {
+        height: 50px;
+        font-size: 16px;
+    }
+    img.successful-payment-image {
+        width: 55px;
+        height: 55px;
+    }
+    .successful-payment-text__block {
+        margin-top: 15px;
+    }
+    p.successful-payment-text {
+        font-size: 18px;
+    }
+}
 @media screen and (min-height : 1200px) {
     img.successful-payment-image {
         width: 115px;
@@ -33,6 +101,52 @@
     p.successful-payment-text {
         font-size: 30px;
         font-weight: 500;
+    }
+}
+@media all and (min-height : 1000px){
+    .back-to-payment__img {
+        width: 50px;
+        height: 50px;
+        margin-left: -10px;
+    }
+    .title-confirmation {
+        font-size: 46px;
+        font-weight: 500;
+    }
+    .path-text {
+        font-size: 28px;
+    }
+    .your-geo-trip-confirm-circle {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+    }
+    
+    .your-geo-trip-confirm-rect {
+        width: 3px;
+        height: 100px;
+        background-color: red;
+    }
+    .your-geo-title-station-bold {
+        font-weight: 600;
+        font-size: 30px;
+    }
+    .your-geo-useless-text {
+        font-size: 20px;
+        color: grey;
+    }
+    .price__text {
+        font-size: 34px;
+    }
+    button.confirm__btn {
+        height: 70px;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        font-size: 24px;
+        color: white;
+        background-color: #0041ff;
     }
 }
 @media screen and (min-height : 1000px) and (max-height : 1200px) {
