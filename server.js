@@ -1,14 +1,26 @@
 const express = require("express");
-const MongoClient = require("mongodb").MongoClient;
+const { MongoClient } = require('mongodb');
 const objectId = require("mongodb").ObjectId;
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');  
 const app = express();
-const url = "mongodb://127.0.0.1:27017/";
-const mongoClient = new MongoClient(url);
-(async function run() {
-  app.locals.collection = mongoClient.db("volgadb").collection("users-setting");
-  app.listen('8080')
+const uri = "";
+(async function run(
+){
+  const client = new MongoClient(uri, 
+    {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    });
+    client.connect(() =>
+    {
+    app.listen(8080)
+    app.locals.collection = client.db('volgadb').collection('user-setting')
+    
+    })
 })();
+
+
+  
 const jsonParser = express.json();
 const parser = bodyParser.json()
 
@@ -70,6 +82,7 @@ app.get("/", jsonParser, async (req, res) => {
       });
     } catch (err) {
       console.log(err);
+      res.redirect("/");
       res.sendStatus(404);
     }
   } else {
@@ -107,6 +120,7 @@ app.get("/", jsonParser, async (req, res) => {
     } catch (err) {
       console.log(err);
       res.clearCookie("userID");
+      res.redirect("/");
       res.sendStatus(500);
     }
   }
@@ -348,7 +362,6 @@ app.put('/pay-confirm' , jsonParser , async(req, res)=>{
     );
     res.send(result);
   } catch (err) {
-    console.log(err);
     res.sendStatus(500);
   }
 });
@@ -356,6 +369,6 @@ app.get("*", function (req, res) {
   res.redirect("/");
 });
 process.on("SIGINT", async () => {
-  await mongoClient.close();
+  await client.close();
   process.exit();
 });

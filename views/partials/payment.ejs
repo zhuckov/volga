@@ -137,7 +137,7 @@
           let time = `${formatTime(d.getHours())}:${formatTime(
             d.getMinutes()
           )}`;
-          info.time = time;
+          info.time = ', ' + time;
           info.date = date;
         }
       })(decodedText.slice(22));
