@@ -1,34 +1,37 @@
 const express = require("express");
-const { MongoClient } = require('mongodb');
 const objectId = require("mongodb").ObjectId;
 const bodyParser = require('body-parser');  
-const app = express();
-const uri = "";
+var app = express();
+const http = require('http');
+const { MongoClient } = require('mongodb');
+const jsonParser = express.json();
+const parser = bodyParser.json()
+const PORT = process.env.PORT || 8080;
+const server = http.createServer(app); 
+
+var client; 
+
+const uri = "mongodb+srv://kjsmart:Kjsmart2MuchSmart@volgarip.tsmaweg.mongodb.net/?retryWrites=true&w=majority";
+
+
 (async function run(
 ){
-  const client = new MongoClient(uri, 
+  client = new MongoClient(uri, 
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     });
     client.connect(() =>
     {
-    app.listen(8080)
-    app.locals.collection = client.db('volgadb').collection('user-setting')
-    
+    app.locals.collection = client.db('volgadb').collection('user-setting');  
+    server.listen(PORT , ()=>{
+    })
+
     })
 })();
 
-
-  
-const jsonParser = express.json();
-const parser = bodyParser.json()
-
-
 app.set("view engine", "ejs");
 app.use(express.static(__dirname));
-
-
 app.get("/", jsonParser, async (req, res) => {
   const collection = req.app.locals.collection;
   let userID = new objectId(req.params.id).toString();
@@ -368,6 +371,7 @@ app.put('/pay-confirm' , jsonParser , async(req, res)=>{
 app.get("*", function (req, res) {
   res.redirect("/");
 });
+
 process.on("SIGINT", async () => {
   await client.close();
   process.exit();
