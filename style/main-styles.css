@@ -225,10 +225,10 @@ img.ticket-qrcode {
     height: 33vh;
     width: 70vw;
 }
-.header__block img{ 
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+.header__block img {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 8px;
 }
 .pay-block-info-img{ 
     width: 24px;
