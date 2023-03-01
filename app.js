@@ -44,13 +44,13 @@ app.get("/", jsonParser, async (req, res) => {
     let userSetting = {
       _id: userID,
       balance: "250",
-      price: "27",
+      price: "30",
       tripNum: "20",
       firstStation: "Мигалово",
       secondStation: "Энергоремонт",
       busRegistratioNumber: "А 069 ТО",
-      date: "1 января 2023, ",
-      time: "00:01",
+      date: "1 марта 2023, ",
+      time: "00:00",
     };
     try {
       await collection.insertOne(userSetting);
